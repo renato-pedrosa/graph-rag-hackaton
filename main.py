@@ -1,6 +1,5 @@
 from dotenv import load_dotenv
 import os
-import logging
 
 import neo4j
 from neo4j_graphrag.llm import OllamaLLM
@@ -13,8 +12,11 @@ from sample_nodes import return_node_labels, return_rel_types, return_prompt
 
 from neo4j_graphrag.indexes import create_vector_index
 
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+from clients import logger
+
+from basic_knowledge_graph import create_knowledge_graph
+
+from knowledge_graph.graph import create_prompt_template
 
 # load neo4j credentials (and openai api key in background).
 load_dotenv('.env', override=True)
@@ -36,32 +38,35 @@ ex_llm=OllamaLLM(
 embedder = OllamaEmbeddings(model="nomic-embed-text")
 
 
-def create_db_vector_index():
-    create_vector_index(driver, name="text_embeddings", label="Chunk",
-                    embedding_property="embedding", dimensions=768, similarity_fn="cosine")
+# def create_db_vector_index():
+#     create_vector_index(driver, name="text_embeddings", label="Chunk",
+#                     embedding_property="embedding", dimensions=768, similarity_fn="cosine")
 
 async def main():
+    logger.info("Starting the application...")  
+    
+    # create_knowledge_graph()
+    create_prompt_template()
 
-    create_db_vector_index()
+    # create_db_vector_index()
+    # kg_builder_pdf = SimpleKGPipeline(
+    #     llm=ex_llm,
+    #     driver=driver,
+    #     text_splitter=FixedSizeSplitter(chunk_size=500, chunk_overlap=100),
+    #     embedder=embedder,
+    #     entities=return_node_labels(),
+    #     relations=return_rel_types(),
+    #     prompt_template=return_prompt(),
+    #     from_pdf=True
+    # )
 
-    kg_builder_pdf = SimpleKGPipeline(
-        llm=ex_llm,
-        driver=driver,
-        text_splitter=FixedSizeSplitter(chunk_size=500, chunk_overlap=100),
-        embedder=embedder,
-        entities=return_node_labels(),
-        relations=return_rel_types(),
-        prompt_template=return_prompt(),
-        from_pdf=True
-    )
+    # pdf_file_paths = ['sample-pdfs/nihms-362971-trunc2.pdf']
 
-    pdf_file_paths = ['sample-pdfs/nihms-362971-trunc2.pdf']
-
-    for path in pdf_file_paths:
-        print(f"Processing : {path}")
-        pdf_result = await kg_builder_pdf.run_async(file_path=path)
-        print(f"Result: {pdf_result}")
-        logger.info("Starting the application...")
+    # for path in pdf_file_paths:
+    #     print(f"Processing : {path}")
+    #     pdf_result = await kg_builder_pdf.run_async(file_path=path)
+    #     print(f"Result: {pdf_result}")
+    #     logger.info("Starting the application...")
 
 
 if __name__ == "__main__":
