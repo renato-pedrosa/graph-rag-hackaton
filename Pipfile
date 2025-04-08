@@ -19,6 +19,7 @@ pyvis = "*"
 langchain = "*"
 langchain-openai = "*"
 langchain-ollama = "*"
+langchain-aws = "*"
 
 [dev-packages]
 
