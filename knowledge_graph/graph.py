@@ -1,10 +1,12 @@
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 # from langchain_ollama import OllamaLLM
-from langchain_aws import BedrockLLM
+from langchain_aws import ChatBedrock
 import json
 
-# from pyvis.network import Network
+from clients import logger
+
+from pyvis.network import Network
 
 
 instruction = """
@@ -50,52 +52,55 @@ documents = """
 """
 
 def create_prompt_template():
-  # Create prompt template
-  prompt_template = PromptTemplate.from_template("""
+    # Create prompt template
+    prompt_template = PromptTemplate.from_template("""
       {instruction}
       Here is document. {documents}
-  """
-  )
+
+      Return only the JSON object with the nodes and edges, do not add any additional text.
+  """)
+
+    logger.info(f"Prompt template created: {prompt_template}")
 
     logger.info("Creating prompt template...")
-    llm = BedrockLLM(model="us.anthropic.claude-3-7-sonnet-20250219-v1:0")
+    llm = ChatBedrock(model="anthropic.claude-3-5-sonnet-20240620-v1:0")
     llm_chain = LLMChain(prompt=prompt_template, llm=llm)
 
     logger.info("Calling prompt template...")
 
     result = llm_chain.run(instruction=instruction, documents=documents)
 
-    logger.info(f"Prompt template created: {result}")
+    logger.info(f"Prompt template result: {result}")
 
-  result_parsed = parser(result)
-  print(result_parsed)
-  # net = Network(
-  #     notebook=True, 
-  #     cdn_resources="remote", 
-  #     bgcolor="#222222",
-  #     font_color="white",
-  #     height="750px",
-  #     width="100%",
-  #     select_menu=True,
-  #     filter_menu=True,
-  # )
+    result_parsed = parser(result)
+    print(result_parsed)
+    net = Network(
+        notebook=True,
+        cdn_resources="remote",
+        bgcolor="#222222",
+        font_color="white",
+        height="750px",
+        width="100%",
+        select_menu=True,
+        filter_menu=True,
+    )
 
-  # # Create Nodes and Edges
-  # for node in result_parsed.get("Nodes"):
-  #     net.add_node(node[0], label=node[0], title=str(node[2]))
+    # Create Nodes and Edges
+    for node in result_parsed.get("Nodes"):
+        net.add_node(node[0], label=node[0], title=str(node[2]))
 
-  # for edge in result_parsed.get("Edges"):
-  #     from_node, title_edge, to_node = edge[0], edge[1], edge[2]
-  #     try:
-  #         net.add_edge(from_node, to=to_node, title=title_edge)
-  #     except:
-  #         net.add_node(to_node, label=to_node, title=str(to_node))
-  #         net.add_edge(from_node, to=to_node, title=title_edge)
-  #         print(relationship)
+    for edge in result_parsed.get("Edges"):
+        from_node, title_edge, to_node = edge[0], edge[1], edge[2]
+        try:
+            net.add_edge(from_node, to=to_node, title=title_edge)
+        except:
+            net.add_node(to_node, label=to_node, title=str(to_node))
+            net.add_edge(from_node, to=to_node, title=title_edge)
+            # print(relationship)
 
-  # net.show('edges.html')
+    net.show("edges.html")
 
-  return result
+    return result
 
 def parser(result):
     """

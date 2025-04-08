@@ -8,7 +8,7 @@ from neo4j_graphrag.embeddings.ollama import OllamaEmbeddings
 from neo4j_graphrag.experimental.components.text_splitters.fixed_size_splitter import FixedSizeSplitter
 from neo4j_graphrag.experimental.pipeline.kg_builder import SimpleKGPipeline
 
-from sample_nodes import return_node_labels, return_rel_types, return_prompt
+from sample_president_nodes import return_node_labels, return_rel_types, return_prompt
 
 from neo4j_graphrag.indexes import create_vector_index
 
@@ -48,7 +48,7 @@ async def main():
     # create_knowledge_graph()
     create_prompt_template()
 
-    # create_db_vector_index()
+    # # create_db_vector_index()
     # kg_builder_pdf = SimpleKGPipeline(
     #     llm=ex_llm,
     #     driver=driver,
@@ -57,18 +57,22 @@ async def main():
     #     entities=return_node_labels(),
     #     relations=return_rel_types(),
     #     prompt_template=return_prompt(),
-    #     from_pdf=True
+    #     from_pdf=True,
     # )
 
-    # pdf_file_paths = ['sample-pdfs/nihms-362971-trunc2.pdf']
+    # pdf_file_paths = ["sample-pdfs/president.pdf"]
 
     # for path in pdf_file_paths:
     #     print(f"Processing : {path}")
     #     pdf_result = await kg_builder_pdf.run_async(file_path=path)
     #     print(f"Result: {pdf_result}")
-    #     logger.info("Starting the application...")
+    #     logger.info("Finished processing...")
 
 
 if __name__ == "__main__":
     import asyncio
     asyncio.run(main())
+
+# Nodes-labels: Person | Place | Organization | ArticleOrPaper | PublicationOrJournal | Disease | Drug | GeneOrProtein | Condition | EffectOrPhenotype | Expose
+# Relations: was_president_of | born_in
+# Nodes: Obama | Honolulu | Biden | Trump | Washington

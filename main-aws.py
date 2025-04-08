@@ -6,7 +6,7 @@ import neo4j
 from neo4j_graphrag.experimental.components.text_splitters.fixed_size_splitter import FixedSizeSplitter
 from neo4j_graphrag.experimental.pipeline.kg_builder import SimpleKGPipeline
 
-from sample_nodes import return_node_labels, return_rel_types, return_prompt
+from sample_president_nodes import return_node_labels, return_rel_types, return_prompt
 
 from neo4j_graphrag.indexes import create_vector_index
 from bedrock.neojs_embedder import NeoJSEmbedder
@@ -31,8 +31,7 @@ ex_llm=NeoJSClaude(
     }
 )
 
-#create text embedder
-# embedder = OllamaEmbeddings(model="nomc-embed-text")
+# create text embedder
 embedder = NeoJSEmbedder(model_id="amazon.titan-embed-text-v2:0")
 
 
@@ -53,21 +52,21 @@ async def main():
     kg_builder_pdf = SimpleKGPipeline(
         llm=ex_llm,
         driver=driver,
-        text_splitter=FixedSizeSplitter(chunk_size=500, chunk_overlap=100),
+        text_splitter=FixedSizeSplitter(chunk_size=5000, chunk_overlap=100),
         embedder=embedder,
         entities=return_node_labels(),
         relations=return_rel_types(),
         prompt_template=return_prompt(),
-        from_pdf=True
+        from_pdf=True,
     )
 
-    pdf_file_paths = ['sample-pdfs/nihms-362971-trunc2.pdf']
+    pdf_file_paths = ["sample-pdfs/presidents.pdf"]
 
     for path in pdf_file_paths:
         print(f"Processing : {path}")
         pdf_result = await kg_builder_pdf.run_async(file_path=path)
         print(f"Result: {pdf_result}")
-        logger.info("Starting the application...")
+        logger.info("Finished processing...")
 
 
 if __name__ == "__main__":
