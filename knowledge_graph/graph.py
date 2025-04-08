@@ -1,9 +1,10 @@
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
-from langchain_ollama import OllamaLLM
+# from langchain_ollama import OllamaLLM
+from langchain_aws import BedrockLLM
 import json
 
-from pyvis.network import Network
+# from pyvis.network import Network
 
 
 instruction = """
@@ -56,9 +57,15 @@ def create_prompt_template():
   """
   )
 
-  llm = OllamaLLM(model="llama3.2")
-  llm_chain = LLMChain(prompt=prompt_template, llm=llm)
-  result = llm_chain.run(instruction=instruction, documents=documents)
+    logger.info("Creating prompt template...")
+    llm = BedrockLLM(model="us.anthropic.claude-3-7-sonnet-20250219-v1:0")
+    llm_chain = LLMChain(prompt=prompt_template, llm=llm)
+
+    logger.info("Calling prompt template...")
+
+    result = llm_chain.run(instruction=instruction, documents=documents)
+
+    logger.info(f"Prompt template created: {result}")
 
   result_parsed = parser(result)
   print(result_parsed)
