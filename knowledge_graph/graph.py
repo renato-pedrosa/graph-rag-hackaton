@@ -2,12 +2,9 @@ from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 from langchain_ollama import OllamaLLM
 import json
-import logging
 
 from pyvis.network import Network
 
-# Initialize logger
-logger = logging.getLogger(__name__)
 
 instruction = """
     You are a data scientist working for a company that is building a graph database. Your task is to extract information from data and convert it into a graph database.
@@ -36,7 +33,7 @@ documents = """
     He also enacted many acts to create public works jobs to help the economy. He became the first president to openly express support for gay marriage, 
     and proposed gun control as a result of the Sandy Hook school shooting.
 
-    Joseph Robinette Biden Jr. (/ˈbaɪdən/ BY-dən; born November 20, 1942) is an American politician who is the 46th and current president of the United States. A member of the Democratic Party, he previously served as the 47th vice president from 2009 to 2017 under President Barack Obama and represented Delaware in the United States Senate from 1973 to 2009.
+    Joseph Robinette Biden Jr. (/ˈbaɪdən/ ⓘ BY-dən; born November 20, 1942) is an American politician who is the 46th and current president of the United States. A member of the Democratic Party, he previously served as the 47th vice president from 2009 to 2017 under President Barack Obama and represented Delaware in the United States Senate from 1973 to 2009.
     Born in Scranton, Pennsylvania, Biden moved with his family to Delaware in 1953. He graduated from the University of Delaware before earning his law degree from Syracuse University. 
     He was elected to the New Castle County Council in 1970 and to the U.S. Senate in 1972. As a senator, Biden drafted and led the effort to pass the Violent Crime Control and Law Enforcement
     Act and the Violence Against Women Act. He also oversaw six U.S. Supreme Court confirmation hearings, including the contentious hearings for Robert Bork and Clarence Thomas. 
@@ -52,75 +49,50 @@ documents = """
 """
 
 def create_prompt_template():
-    # Create prompt template
-    prompt_template = PromptTemplate.from_template("""
-    You are a knowledge graph builder. Analyze the following text and create a JSON object with two keys: "Nodes" and "Edges".
-    
-    Format your response exactly as follows:
-    ```json
-    {
-      "Nodes": [
-        ["node_id", "node_type", {"properties": "values"}]
-      ],
-      "Edges": [
-        ["from_node", "relationship", "to_node"]
-      ]
-    }
-    ```
-    
-    Text to analyze: {documents}
-    """)
+  # Create prompt template
+  prompt_template = PromptTemplate.from_template("""
+      {instruction}
+      Here is document. {documents}
+  """
+  )
 
-    llm = OllamaLLM(model="llama3.2")
-    llm_chain = LLMChain(prompt=prompt_template, llm=llm)
-    result = llm_chain.run(instruction=instruction, documents=documents)
+  llm = OllamaLLM(model="llama3.2")
+  llm_chain = LLMChain(prompt=prompt_template, llm=llm)
+  result = llm_chain.run(instruction=instruction, documents=documents)
 
-    # Extract the JSON content from the response
-    try:
-        # Find the JSON content within the response
-        start_marker = "```json"
-        end_marker = "```"
-        start_index = result.find(start_marker) + len(start_marker)
-        end_index = result.find(end_marker, start_index)
-        
-        if start_index != -1 and end_index != -1:
-            json_content = result[start_index:end_index].strip()
-            result_parsed = json.loads(json_content)
-        else:
-            # If no JSON markers found, try to parse directly
-            result_parsed = json.loads(result)
-    except json.JSONDecodeError as e:
-        logger.error(f"Failed to parse JSON: {e}")
-        logger.error(f"Raw response: {result}")
-        result_parsed = None
+  result_parsed = parser(result)
+  print(result_parsed)
+  # net = Network(
+  #     notebook=True, 
+  #     cdn_resources="remote", 
+  #     bgcolor="#222222",
+  #     font_color="white",
+  #     height="750px",
+  #     width="100%",
+  #     select_menu=True,
+  #     filter_menu=True,
+  # )
 
-    if result_parsed:
-        print(result_parsed)
+  # # Create Nodes and Edges
+  # for node in result_parsed.get("Nodes"):
+  #     net.add_node(node[0], label=node[0], title=str(node[2]))
 
-    return result_parsed
+  # for edge in result_parsed.get("Edges"):
+  #     from_node, title_edge, to_node = edge[0], edge[1], edge[2]
+  #     try:
+  #         net.add_edge(from_node, to=to_node, title=title_edge)
+  #     except:
+  #         net.add_node(to_node, label=to_node, title=str(to_node))
+  #         net.add_edge(from_node, to=to_node, title=title_edge)
+  #         print(relationship)
 
-# net = Network(
-#     notebook=True, 
-#     cdn_resources="remote", 
-#     bgcolor="#222222",
-#     font_color="white",
-#     height="750px",
-#     width="100%",
-#     select_menu=True,
-#     filter_menu=True,
-# )
+  # net.show('edges.html')
 
-# # Create Nodes and Edges
-# for node in result_parsed.get("Nodes"):
-#     net.add_node(node[0], label=node[0], title=str(node[2]))
+  return result
 
-# for edge in result_parsed.get("Edges"):
-#     from_node, title_edge, to_node = edge[0], edge[1], edge[2]
-#     try:
-#         net.add_edge(from_node, to=to_node, title=title_edge)
-#     except:
-#         net.add_node(to_node, label=to_node, title=str(to_node))
-#         net.add_edge(from_node, to=to_node, title=title_edge)
-#         print(relationship)
+def parser(result):
+    """
+    Convert string to dictionary with "Nodes" and "Edges" as keys.
+    """
+    return json.loads(result)
 
-# net.show('edges.html')
