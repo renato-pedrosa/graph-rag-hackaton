@@ -32,7 +32,8 @@ vector_retriever = VectorRetriever(
 
 vector_res = vector_retriever.get_search_results(query_text = "How is precision medicine applied to Lupus?", 
                                                  top_k=3)
-for i in vector_res.records: print("====\n" + json.dumps(i.data(), indent=4))
+for i in vector_res.records:
+    print("====" + json.dumps(i.data(), indent=4))
 
 
 vc_retriever = VectorCypherRetriever(
@@ -50,9 +51,9 @@ WITH collect(DISTINCT chunk) AS chunks,
   collect(DISTINCT rel) AS rels
 
 //3) format and return context
-RETURN '=== text ===\n' + apoc.text.join([c in chunks | c.text], '\n---\n') + '\n\n=== kg_rels ===\n' +
-  apoc.text.join([r in rels | startNode(r).name + ' - ' + type(r) + '(' + coalesce(r.details, '') + ')' +  ' -> ' + endNode(r).name ], '\n---\n') AS info
-"""
+RETURN '=== text ===' + apoc.text.join([c in chunks | c.text], '---') + '=== kg_rels ===' +
+  apoc.text.join([r in rels | startNode(r).name + ' - ' + type(r) + '(' + coalesce(r.details, '') + ')' +  ' -> ' + endNode(r).name ], '---') AS info
+""",
 )
 
 
@@ -60,7 +61,7 @@ RETURN '=== text ===\n' + apoc.text.join([c in chunks | c.text], '\n---\n') + '\
 vc_res = vc_retriever.get_search_results(query_text = "How is precision medicine applied to Lupus?", top_k=3)
 
 # print output
-kg_rel_pos = vc_res.records[0]['info'].find('\n\n=== kg_rels ===\n')
+kg_rel_pos = vc_res.records[0]["info"].find("=== kg_rels ===")
 print("# Text Chunk Context:")
 print(vc_res.records[0]['info'][:kg_rel_pos])
 print("# KG Context From Relationships:")

@@ -12,6 +12,8 @@ from neo4j_graphrag.indexes import create_vector_index
 from bedrock.neojs_embedder import NeoJSEmbedder
 from bedrock.neojs_claude import NeoJSClaude
 
+from knowledge_graph.fifa_nodes import generate_nodes
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -47,26 +49,28 @@ def create_db_vector_index():
 
 async def main():
 
-    create_db_vector_index()
+    await generate_nodes()
 
-    kg_builder_pdf = SimpleKGPipeline(
-        llm=ex_llm,
-        driver=driver,
-        text_splitter=FixedSizeSplitter(chunk_size=5000, chunk_overlap=100),
-        embedder=embedder,
-        entities=return_node_labels(),
-        relations=return_rel_types(),
-        prompt_template=return_prompt(),
-        from_pdf=True,
-    )
+    # create_db_vector_index()
 
-    pdf_file_paths = ["fifa-samples-pdfs/fifa-world-cup.pdf"]
+    # kg_builder_pdf = SimpleKGPipeline(
+    #     llm=ex_llm,
+    #     driver=driver,
+    #     text_splitter=FixedSizeSplitter(chunk_size=5000, chunk_overlap=100),
+    #     embedder=embedder,
+    #     entities=return_node_labels(),
+    #     relations=return_rel_types(),
+    #     prompt_template=return_prompt(),
+    #     from_pdf=True,
+    # )
 
-    for path in pdf_file_paths:
-        print(f"Processing : {path}")
-        pdf_result = await kg_builder_pdf.run_async(file_path=path)
-        print(f"Result: {pdf_result}")
-        logger.info("Finished processing...")
+    # pdf_file_paths = ["fifa-samples-pdfs/fifa-world-cup.pdf"]
+
+    # for path in pdf_file_paths:
+    #     print(f"Processing : {path}")
+    #     pdf_result = await kg_builder_pdf.run_async(file_path=path)
+    #     print(f"Result: {pdf_result}")
+    #     logger.info("Finished processing...")
 
 
 if __name__ == "__main__":
