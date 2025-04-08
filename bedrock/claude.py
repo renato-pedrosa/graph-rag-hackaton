@@ -2,7 +2,10 @@ import boto3
 import json
 import logging
 from botocore.config import Config
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Union
+from neo4j_graphrag.types import LLMMessage
+from neo4j_graphrag.message_history import MessageHistory
+
 import time
 
 logger = logging.getLogger(__name__)
@@ -74,11 +77,12 @@ class Claude:
     def generate_response(
         self,
         prompt: str,
-        system_prompt: str = None, # type: ignore
+        system_prompt: str = None,  # type: ignore
+        message_history: Optional[Union[List[LLMMessage], MessageHistory]] = None,  # type: ignore
         model_id: str = "us.anthropic.claude-3-7-sonnet-20250219-v1:0",
-        max_tokens: int = None,# type: ignore
-        temperature: float = None,# type: ignore
-        stop_sequences: List[str] = None,# type: ignore
+        max_tokens: int = None,  # type: ignore
+        temperature: float = None,  # type: ignore
+        stop_sequences: List[str] = None,  # type: ignore
     ) -> Optional[str]:
         max_tokens = max_tokens or self.default_max_tokens
         temperature = temperature or self.default_temperature
@@ -90,7 +94,18 @@ class Claude:
             "messages": [{"role": "user", "content": []}],
         }
 
-        prompt_config["messages"][0]["content"].append({"type": "text", "text": prompt}) # type: ignore
+        prompt_config["messages"][0]["content"].append({"type": "text", "text": prompt})  # type: ignore
+
+        if message_history:
+            for message in message_history:
+                if message.role == "system":
+                    continue
+                prompt_config["messages"].append(
+                    {
+                        "role": message.role,
+                        "content": [{"type": "text", "text": message.content}],
+                    }
+                )
 
         if system_prompt:
             prompt_config["system"] = system_prompt
