@@ -6,13 +6,11 @@ import neo4j
 from neo4j_graphrag.experimental.components.text_splitters.fixed_size_splitter import FixedSizeSplitter
 from neo4j_graphrag.experimental.pipeline.kg_builder import SimpleKGPipeline
 
-from sample_president_nodes import return_node_labels, return_rel_types, return_prompt
-
 from neo4j_graphrag.indexes import create_vector_index
 from bedrock.neojs_embedder import NeoJSEmbedder
 from bedrock.neojs_claude import NeoJSClaude
 
-from knowledge_graph.fifa_nodes import generate_nodes
+from knowledge_graph.fifa_nodes import generate_nodes, return_prompt
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -48,29 +46,30 @@ def create_db_vector_index():
     )
 
 async def main():
+    node_labels, rel_types = await generate_nodes()
 
-    await generate_nodes()
+    create_db_vector_index()
 
-    # create_db_vector_index()
+    kg_builder_pdf = SimpleKGPipeline(
+        llm=ex_llm,
+        driver=driver,
+        text_splitter=FixedSizeSplitter(
+            chunk_size=5000, chunk_overlap=200, approximate=True
+        ),
+        embedder=embedder,
+        entities=node_labels,
+        relations=rel_types,
+        prompt_template=return_prompt(),
+        from_pdf=True,
+    )
 
-    # kg_builder_pdf = SimpleKGPipeline(
-    #     llm=ex_llm,
-    #     driver=driver,
-    #     text_splitter=FixedSizeSplitter(chunk_size=5000, chunk_overlap=100),
-    #     embedder=embedder,
-    #     entities=return_node_labels(),
-    #     relations=return_rel_types(),
-    #     prompt_template=return_prompt(),
-    #     from_pdf=True,
-    # )
+    pdf_file_paths = ["fifa-samples-pdfs/fifa-world-cup.pdf"]
 
-    # pdf_file_paths = ["fifa-samples-pdfs/fifa-world-cup.pdf"]
-
-    # for path in pdf_file_paths:
-    #     print(f"Processing : {path}")
-    #     pdf_result = await kg_builder_pdf.run_async(file_path=path)
-    #     print(f"Result: {pdf_result}")
-    #     logger.info("Finished processing...")
+    for path in pdf_file_paths:
+        print(f"Processing : {path}")
+        pdf_result = await kg_builder_pdf.run_async(file_path=path)
+        print(f"Result: {pdf_result}")
+        logger.info("Finished processing...")
 
 
 if __name__ == "__main__":

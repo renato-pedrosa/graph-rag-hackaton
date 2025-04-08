@@ -1,0 +1,2312 @@
+[
+    {
+        "Nodes": [
+            [
+                "fifa_world_cup",
+                "Competition",
+                {
+                    "name": "FIFA World Cup",
+                    "founded": 1930,
+                    "region": "International"
+                }
+            ],
+            [
+                "fifa",
+                "Organization",
+                {
+                    "name": "FIFA",
+                    "full_name": "Fédération Internationale de Football Association"
+                }
+            ],
+            [
+                "argentina",
+                "Team",
+                {
+                    "name": "Argentina",
+                    "titles": 3
+                }
+            ],
+            [
+                "brazil",
+                "Team",
+                {
+                    "name": "Brazil",
+                    "titles": 5
+                }
+            ],
+            [
+                "germany",
+                "Team",
+                {
+                    "name": "Germany",
+                    "titles": 4
+                }
+            ],
+            [
+                "italy",
+                "Team",
+                {
+                    "name": "Italy",
+                    "titles": 4
+                }
+            ],
+            [
+                "uruguay",
+                "Team",
+                {
+                    "name": "Uruguay",
+                    "titles": 2
+                }
+            ],
+            [
+                "france",
+                "Team",
+                {
+                    "name": "France",
+                    "titles": 2
+                }
+            ],
+            [
+                "england",
+                "Team",
+                {
+                    "name": "England",
+                    "titles": 1
+                }
+            ],
+            [
+                "spain",
+                "Team",
+                {
+                    "name": "Spain",
+                    "titles": 1
+                }
+            ],
+            [
+                "qatar",
+                "Country",
+                {
+                    "name": "Qatar"
+                }
+            ],
+            [
+                "canada",
+                "Country",
+                {
+                    "name": "Canada"
+                }
+            ],
+            [
+                "mexico",
+                "Country",
+                {
+                    "name": "Mexico"
+                }
+            ],
+            [
+                "united_states",
+                "Country",
+                {
+                    "name": "United States"
+                }
+            ],
+            [
+                "jules_rimet",
+                "Person",
+                {
+                    "name": "Jules Rimet",
+                    "role": "FIFA president"
+                }
+            ],
+            [
+                "estadio_centenario",
+                "Venue",
+                {
+                    "name": "Estadio Centenario",
+                    "location": "Montevideo, Uruguay"
+                }
+            ]
+        ],
+        "Edges": [
+            [
+                "fifa",
+                "organizes",
+                "fifa_world_cup",
+                {}
+            ],
+            [
+                "argentina",
+                "won",
+                "fifa_world_cup",
+                {
+                    "year": 2022
+                }
+            ],
+            [
+                "brazil",
+                "most_successful",
+                "fifa_world_cup",
+                {}
+            ],
+            [
+                "qatar",
+                "hosted",
+                "fifa_world_cup",
+                {
+                    "year": 2022
+                }
+            ],
+            [
+                "canada",
+                "will_host",
+                "fifa_world_cup",
+                {
+                    "year": 2026
+                }
+            ],
+            [
+                "mexico",
+                "will_host",
+                "fifa_world_cup",
+                {
+                    "year": 2026
+                }
+            ],
+            [
+                "united_states",
+                "will_host",
+                "fifa_world_cup",
+                {
+                    "year": 2026
+                }
+            ],
+            [
+                "jules_rimet",
+                "promoted",
+                "fifa_world_cup",
+                {}
+            ],
+            [
+                "estadio_centenario",
+                "hosted",
+                "fifa_world_cup",
+                {
+                    "year": 1930,
+                    "event": "first final"
+                }
+            ]
+        ]
+    }, 
+    {
+        "Nodes": [
+            [
+                "switzerland",
+                "Country",
+                {
+                    "name": "Switzerland"
+                }
+            ],
+            [
+                "england",
+                "Country",
+                {
+                    "name": "England"
+                }
+            ],
+            [
+                "fa_england",
+                "Organization",
+                {
+                    "name": "FA of England"
+                }
+            ],
+            [
+                "west_auckland",
+                "Team",
+                {
+                    "name": "West Auckland",
+                    "type": "amateur",
+                    "location": "County Durham"
+                }
+            ],
+            [
+                "lipton_competition",
+                "Tournament",
+                {
+                    "name": "Lipton competition"
+                }
+            ],
+            [
+                "fifa",
+                "Organization",
+                {
+                    "name": "FIFA"
+                }
+            ],
+            [
+                "olympic_tournament",
+                "Tournament",
+                {
+                    "name": "Olympic football tournament"
+                }
+            ],
+            [
+                "uruguay",
+                "Country",
+                {
+                    "name": "Uruguay"
+                }
+            ],
+            [
+                "jules_rimet",
+                "Person",
+                {
+                    "name": "Jules Rimet",
+                    "role": "FIFA President"
+                }
+            ],
+            [
+                "world_cup",
+                "Tournament",
+                {
+                    "name": "FIFA World Cup"
+                }
+            ],
+            [
+                "france",
+                "Country",
+                {
+                    "name": "France"
+                }
+            ],
+            [
+                "united_states",
+                "Country",
+                {
+                    "name": "United States"
+                }
+            ],
+            [
+                "mexico",
+                "Country",
+                {
+                    "name": "Mexico"
+                }
+            ],
+            [
+                "belgium",
+                "Country",
+                {
+                    "name": "Belgium"
+                }
+            ],
+            [
+                "argentina",
+                "Country",
+                {
+                    "name": "Argentina"
+                }
+            ],
+            [
+                "lucien_laurent",
+                "Person",
+                {
+                    "name": "Lucien Laurent",
+                    "nationality": "French"
+                }
+            ]
+        ],
+        "Edges": [
+            [
+                "fa_england",
+                "refused",
+                "lipton_competition",
+                {}
+            ],
+            [
+                "west_auckland",
+                "represented",
+                "england",
+                {
+                    "in": "Lipton competition"
+                }
+            ],
+            [
+                "west_auckland",
+                "won",
+                "lipton_competition",
+                {
+                    "year": 1909
+                }
+            ],
+            [
+                "west_auckland",
+                "won",
+                "lipton_competition",
+                {
+                    "year": 1911
+                }
+            ],
+            [
+                "fifa",
+                "recognized",
+                "olympic_tournament",
+                {
+                    "as": "world football championship for amateurs",
+                    "year": 1914
+                }
+            ],
+            [
+                "uruguay",
+                "won",
+                "olympic_tournament",
+                {
+                    "year": 1924
+                }
+            ],
+            [
+                "uruguay",
+                "won",
+                "olympic_tournament",
+                {
+                    "year": 1928
+                }
+            ],
+            [
+                "jules_rimet",
+                "initiated",
+                "world_cup",
+                {}
+            ],
+            [
+                "fifa",
+                "named",
+                "uruguay",
+                {
+                    "as": "host",
+                    "year": 1930
+                }
+            ],
+            [
+                "france",
+                "defeated",
+                "mexico",
+                {
+                    "score": "4-1",
+                    "date": "13 July 1930"
+                }
+            ],
+            [
+                "united_states",
+                "defeated",
+                "belgium",
+                {
+                    "score": "3-0",
+                    "date": "13 July 1930"
+                }
+            ],
+            [
+                "lucien_laurent",
+                "scored",
+                "world_cup",
+                {
+                    "note": "first goal in World Cup history"
+                }
+            ],
+            [
+                "uruguay",
+                "defeated",
+                "argentina",
+                {
+                    "score": "4-2",
+                    "event": "1930 World Cup final"
+                }
+            ]
+        ]
+    }, {
+        "Nodes": [
+            [
+                "fifa_world_cup",
+                "Tournament",
+                {
+                    "name": "FIFA World Cup"
+                }
+            ],
+            [
+                "europe",
+                "Region",
+                {
+                    "name": "Europe"
+                }
+            ],
+            [
+                "south_america",
+                "Region",
+                {
+                    "name": "South America"
+                }
+            ],
+            [
+                "africa",
+                "Region",
+                {
+                    "name": "Africa"
+                }
+            ],
+            [
+                "asia",
+                "Region",
+                {
+                    "name": "Asia"
+                }
+            ],
+            [
+                "north_america",
+                "Region",
+                {
+                    "name": "North America"
+                }
+            ],
+            [
+                "oceania",
+                "Region",
+                {
+                    "name": "Oceania"
+                }
+            ],
+            [
+                "united_states",
+                "Team",
+                {
+                    "name": "United States"
+                }
+            ],
+            [
+                "cuba",
+                "Team",
+                {
+                    "name": "Cuba"
+                }
+            ],
+            [
+                "north_korea",
+                "Team",
+                {
+                    "name": "North Korea"
+                }
+            ],
+            [
+                "mexico",
+                "Team",
+                {
+                    "name": "Mexico"
+                }
+            ],
+            [
+                "cameroon",
+                "Team",
+                {
+                    "name": "Cameroon"
+                }
+            ],
+            [
+                "south_korea",
+                "Team",
+                {
+                    "name": "South Korea"
+                }
+            ],
+            [
+                "senegal",
+                "Team",
+                {
+                    "name": "Senegal"
+                }
+            ],
+            [
+                "ghana",
+                "Team",
+                {
+                    "name": "Ghana"
+                }
+            ],
+            [
+                "costa_rica",
+                "Team",
+                {
+                    "name": "Costa Rica"
+                }
+            ],
+            [
+                "morocco",
+                "Team",
+                {
+                    "name": "Morocco"
+                }
+            ],
+            [
+                "sepp_blatter",
+                "Person",
+                {
+                    "name": "Sepp Blatter",
+                    "role": "FIFA President"
+                }
+            ],
+            [
+                "michel_platini",
+                "Person",
+                {
+                    "name": "Michel Platini",
+                    "role": "UEFA President"
+                }
+            ],
+            [
+                "gianni_infantino",
+                "Person",
+                {
+                    "name": "Gianni Infantino",
+                    "role": "FIFA President"
+                }
+            ],
+            [
+                "chuck_blazer",
+                "Person",
+                {
+                    "name": "Chuck Blazer"
+                }
+            ],
+            [
+                "jerome_valcke",
+                "Person",
+                {
+                    "name": "Jérôme Valcke",
+                    "role": "FIFA Secretary General"
+                }
+            ]
+        ],
+        "Edges": [
+            [
+                "united_states",
+                "reached",
+                "fifa_world_cup",
+                {
+                    "stage": "semi-finals",
+                    "year": 1930
+                }
+            ],
+            [
+                "cuba",
+                "reached",
+                "fifa_world_cup",
+                {
+                    "stage": "quarter-finals",
+                    "year": 1938
+                }
+            ],
+            [
+                "north_korea",
+                "reached",
+                "fifa_world_cup",
+                {
+                    "stage": "quarter-finals",
+                    "year": 1966
+                }
+            ],
+            [
+                "mexico",
+                "reached",
+                "fifa_world_cup",
+                {
+                    "stage": "quarter-finals",
+                    "year": 1970
+                }
+            ],
+            [
+                "mexico",
+                "reached",
+                "fifa_world_cup",
+                {
+                    "stage": "quarter-finals",
+                    "year": 1986
+                }
+            ],
+            [
+                "cameroon",
+                "reached",
+                "fifa_world_cup",
+                {
+                    "stage": "quarter-finals",
+                    "year": 1990
+                }
+            ],
+            [
+                "south_korea",
+                "reached",
+                "fifa_world_cup",
+                {
+                    "stage": "fourth place",
+                    "year": 2002
+                }
+            ],
+            [
+                "senegal",
+                "reached",
+                "fifa_world_cup",
+                {
+                    "stage": "quarter-finals",
+                    "year": 2002
+                }
+            ],
+            [
+                "united_states",
+                "reached",
+                "fifa_world_cup",
+                {
+                    "stage": "quarter-finals",
+                    "year": 2002
+                }
+            ],
+            [
+                "ghana",
+                "reached",
+                "fifa_world_cup",
+                {
+                    "stage": "quarter-finals",
+                    "year": 2010
+                }
+            ],
+            [
+                "costa_rica",
+                "reached",
+                "fifa_world_cup",
+                {
+                    "stage": "quarter-finals",
+                    "year": 2014
+                }
+            ],
+            [
+                "morocco",
+                "reached",
+                "fifa_world_cup",
+                {
+                    "stage": "fourth place",
+                    "year": 2022
+                }
+            ],
+            [
+                "sepp_blatter",
+                "proposed",
+                "fifa_world_cup",
+                {
+                    "action": "guarantee Caribbean position"
+                }
+            ],
+            [
+                "michel_platini",
+                "proposed",
+                "fifa_world_cup",
+                {
+                    "action": "expand to 40 teams"
+                }
+            ],
+            [
+                "gianni_infantino",
+                "supported",
+                "fifa_world_cup",
+                {
+                    "action": "expand to 48 teams",
+                    "year": 2026
+                }
+            ],
+            [
+                "chuck_blazer",
+                "admitted_bribery",
+                "fifa_world_cup",
+                {
+                    "years": [
+                        1998,
+                        2010
+                    ]
+                }
+            ],
+            [
+                "jerome_valcke",
+                "postponed",
+                "fifa_world_cup",
+                {
+                    "action": "bidding process",
+                    "year": 2026
+                }
+            ]
+        ]
+    }, {
+        "Nodes": [
+            [
+                "blatter",
+                "Person",
+                {
+                    "name": "Blatter",
+                    "role": "FIFA President"
+                }
+            ],
+            [
+                "platini",
+                "Person",
+                {
+                    "name": "Michel Platini",
+                    "role": "FIFA VP"
+                }
+            ],
+            [
+                "fifa",
+                "Organization",
+                {
+                    "name": "FIFA"
+                }
+            ],
+            [
+                "world_cup",
+                "Tournament",
+                {
+                    "name": "FIFA World Cup"
+                }
+            ],
+            [
+                "womens_world_cup",
+                "Tournament",
+                {
+                    "name": "FIFA Women's World Cup"
+                }
+            ],
+            [
+                "olympics",
+                "Tournament",
+                {
+                    "name": "Summer Olympic Games"
+                }
+            ],
+            [
+                "confederations_cup",
+                "Tournament",
+                {
+                    "name": "FIFA Confederations Cup"
+                }
+            ],
+            [
+                "jules_rimet_trophy",
+                "Award",
+                {
+                    "name": "Jules Rimet Trophy"
+                }
+            ],
+            [
+                "fifa_world_cup_trophy",
+                "Award",
+                {
+                    "name": "FIFA World Cup Trophy"
+                }
+            ],
+            [
+                "gazzaniga",
+                "Person",
+                {
+                    "name": "Silvio Gazzaniga",
+                    "occupation": "Designer"
+                }
+            ]
+        ],
+        "Edges": [
+            [
+                "blatter",
+                "suspended_from",
+                "fifa",
+                {
+                    "duration": "90 days"
+                }
+            ],
+            [
+                "platini",
+                "suspended_from",
+                "fifa",
+                {
+                    "duration": "90 days"
+                }
+            ],
+            [
+                "fifa",
+                "organizes",
+                "world_cup",
+                {}
+            ],
+            [
+                "fifa",
+                "organizes",
+                "womens_world_cup",
+                {}
+            ],
+            [
+                "fifa",
+                "organizes",
+                "confederations_cup",
+                {}
+            ],
+            [
+                "world_cup",
+                "awarded",
+                "jules_rimet_trophy",
+                {
+                    "period": "1930-1970"
+                }
+            ],
+            [
+                "world_cup",
+                "awarded",
+                "fifa_world_cup_trophy",
+                {
+                    "since": 1974
+                }
+            ],
+            [
+                "gazzaniga",
+                "designed",
+                "fifa_world_cup_trophy",
+                {}
+            ]
+        ]
+    }, {
+        "Nodes": [
+            [
+                "fifa_world_cup",
+                "Tournament",
+                {
+                    "name": "FIFA World Cup"
+                }
+            ],
+            [
+                "gold_medal",
+                "Award",
+                {
+                    "type": "gold",
+                    "position": "first place"
+                }
+            ],
+            [
+                "silver_medal",
+                "Award",
+                {
+                    "type": "silver",
+                    "position": "second place"
+                }
+            ],
+            [
+                "bronze_medal",
+                "Award",
+                {
+                    "type": "bronze",
+                    "position": "third place"
+                }
+            ],
+            [
+                "fifa_champions_badge",
+                "Award",
+                {
+                    "name": "FIFA Champions Badge"
+                }
+            ],
+            [
+                "qualification_tournament",
+                "Event",
+                {
+                    "purpose": "thin the field for final tournament"
+                }
+            ],
+            [
+                "final_tournament",
+                "Event",
+                {
+                    "format": "32 teams",
+                    "duration": "one month"
+                }
+            ],
+            [
+                "group_stage",
+                "TournamentPhase",
+                {}
+            ],
+            [
+                "knockout_stage",
+                "TournamentPhase",
+                {}
+            ],
+            [
+                "points_system",
+                "System",
+                {
+                    "win": 3,
+                    "draw": 1,
+                    "loss": 0
+                }
+            ],
+            [
+                "tiebreaker_system",
+                "System",
+                {
+                    "criteria": [
+                        "goal difference",
+                        "goals scored",
+                        "head-to-head"
+                    ]
+                }
+            ],
+            [
+                "fair_play_points",
+                "System",
+                {
+                    "yellow_card": -1,
+                    "indirect_red_card": -3,
+                    "direct_red_card": -4
+                }
+            ]
+        ],
+        "Edges": [
+            [
+                "fifa_world_cup",
+                "awards",
+                "gold_medal",
+                {}
+            ],
+            [
+                "fifa_world_cup",
+                "awards",
+                "silver_medal",
+                {}
+            ],
+            [
+                "fifa_world_cup",
+                "awards",
+                "bronze_medal",
+                {}
+            ],
+            [
+                "fifa_world_cup",
+                "awards",
+                "fifa_champions_badge",
+                {
+                    "since": 2006
+                }
+            ],
+            [
+                "fifa_world_cup",
+                "has_phase",
+                "qualification_tournament",
+                {}
+            ],
+            [
+                "fifa_world_cup",
+                "has_phase",
+                "final_tournament",
+                {}
+            ],
+            [
+                "final_tournament",
+                "consists_of",
+                "group_stage",
+                {}
+            ],
+            [
+                "final_tournament",
+                "consists_of",
+                "knockout_stage",
+                {}
+            ],
+            [
+                "group_stage",
+                "uses",
+                "points_system",
+                {}
+            ],
+            [
+                "group_stage",
+                "uses",
+                "tiebreaker_system",
+                {}
+            ],
+            [
+                "tiebreaker_system",
+                "includes",
+                "fair_play_points",
+                {}
+            ]
+        ]
+    }, {
+        "Nodes": [
+            [
+                "fifa_world_cup",
+                "Tournament",
+                {
+                    "name": "FIFA World Cup"
+                }
+            ],
+            [
+                "round_of_16",
+                "TournamentStage",
+                {
+                    "name": "Round of 16"
+                }
+            ],
+            [
+                "quarter_finals",
+                "TournamentStage",
+                {
+                    "name": "Quarter-finals"
+                }
+            ],
+            [
+                "semi_finals",
+                "TournamentStage",
+                {
+                    "name": "Semi-finals"
+                }
+            ],
+            [
+                "third_place_match",
+                "TournamentStage",
+                {
+                    "name": "Third-place match"
+                }
+            ],
+            [
+                "final",
+                "TournamentStage",
+                {
+                    "name": "Final"
+                }
+            ],
+            [
+                "fifa",
+                "Organization",
+                {
+                    "name": "FIFA"
+                }
+            ],
+            [
+                "2026_world_cup",
+                "Tournament",
+                {
+                    "name": "2026 FIFA World Cup",
+                    "teams": 48
+                }
+            ],
+            [
+                "2030_world_cup",
+                "Tournament",
+                {
+                    "name": "2030 FIFA World Cup"
+                }
+            ],
+            [
+                "uruguay",
+                "Country",
+                {
+                    "name": "Uruguay"
+                }
+            ],
+            [
+                "france",
+                "Country",
+                {
+                    "name": "France"
+                }
+            ],
+            [
+                "argentina",
+                "Country",
+                {
+                    "name": "Argentina"
+                }
+            ],
+            [
+                "south_korea",
+                "Country",
+                {
+                    "name": "South Korea"
+                }
+            ],
+            [
+                "japan",
+                "Country",
+                {
+                    "name": "Japan"
+                }
+            ],
+            [
+                "south_africa",
+                "Country",
+                {
+                    "name": "South Africa"
+                }
+            ],
+            [
+                "brazil",
+                "Country",
+                {
+                    "name": "Brazil"
+                }
+            ],
+            [
+                "russia",
+                "Country",
+                {
+                    "name": "Russia"
+                }
+            ],
+            [
+                "qatar",
+                "Country",
+                {
+                    "name": "Qatar"
+                }
+            ],
+            [
+                "germany",
+                "Country",
+                {
+                    "name": "Germany"
+                }
+            ],
+            [
+                "united_states",
+                "Country",
+                {
+                    "name": "United States"
+                }
+            ],
+            [
+                "canada",
+                "Country",
+                {
+                    "name": "Canada"
+                }
+            ],
+            [
+                "mexico",
+                "Country",
+                {
+                    "name": "Mexico"
+                }
+            ]
+        ],
+        "Edges": [
+            [
+                "fifa_world_cup",
+                "has_stage",
+                "round_of_16",
+                {}
+            ],
+            [
+                "fifa_world_cup",
+                "has_stage",
+                "quarter_finals",
+                {}
+            ],
+            [
+                "fifa_world_cup",
+                "has_stage",
+                "semi_finals",
+                {}
+            ],
+            [
+                "fifa_world_cup",
+                "has_stage",
+                "third_place_match",
+                {}
+            ],
+            [
+                "fifa_world_cup",
+                "has_stage",
+                "final",
+                {}
+            ],
+            [
+                "fifa",
+                "organizes",
+                "fifa_world_cup",
+                {}
+            ],
+            [
+                "fifa",
+                "approved",
+                "2026_world_cup",
+                {
+                    "date": "2017-01-10"
+                }
+            ],
+            [
+                "uruguay",
+                "hosted",
+                "fifa_world_cup",
+                {
+                    "year": 1930
+                }
+            ],
+            [
+                "france",
+                "hosted",
+                "fifa_world_cup",
+                {
+                    "year": 1938
+                }
+            ],
+            [
+                "south_korea",
+                "co_hosted",
+                "fifa_world_cup",
+                {
+                    "year": 2002
+                }
+            ],
+            [
+                "japan",
+                "co_hosted",
+                "fifa_world_cup",
+                {
+                    "year": 2002
+                }
+            ],
+            [
+                "south_africa",
+                "hosted",
+                "fifa_world_cup",
+                {
+                    "year": 2010
+                }
+            ],
+            [
+                "brazil",
+                "hosted",
+                "fifa_world_cup",
+                {
+                    "year": 2014
+                }
+            ],
+            [
+                "russia",
+                "hosted",
+                "fifa_world_cup",
+                {
+                    "year": 2018
+                }
+            ],
+            [
+                "qatar",
+                "hosted",
+                "fifa_world_cup",
+                {
+                    "year": 2022
+                }
+            ],
+            [
+                "united_states",
+                "will_host",
+                "2026_world_cup",
+                {}
+            ],
+            [
+                "canada",
+                "will_host",
+                "2026_world_cup",
+                {}
+            ],
+            [
+                "mexico",
+                "will_host",
+                "2026_world_cup",
+                {}
+            ]
+        ]
+    }, {
+        "Nodes": [
+            [
+                "FIFA_World_Cup",
+                "Event",
+                {
+                    "name": "FIFA World Cup"
+                }
+            ],
+            [
+                "UEFA",
+                "Organization",
+                {
+                    "name": "UEFA",
+                    "full_name": "Union of European Football Associations"
+                }
+            ],
+            [
+                "CONMEBOL",
+                "Organization",
+                {
+                    "name": "CONMEBOL",
+                    "full_name": "South American Football Confederation"
+                }
+            ],
+            [
+                "CONCACAF",
+                "Organization",
+                {
+                    "name": "CONCACAF",
+                    "full_name": "Confederation of North, Central America and Caribbean Association Football"
+                }
+            ],
+            [
+                "AFC",
+                "Organization",
+                {
+                    "name": "AFC",
+                    "full_name": "Asian Football Confederation"
+                }
+            ],
+            [
+                "CAF",
+                "Organization",
+                {
+                    "name": "CAF",
+                    "full_name": "Confederation of African Football"
+                }
+            ],
+            [
+                "OFC",
+                "Organization",
+                {
+                    "name": "OFC",
+                    "full_name": "Oceania Football Confederation"
+                }
+            ],
+            [
+                "Adidas",
+                "Company",
+                {
+                    "name": "Adidas"
+                }
+            ],
+            [
+                "Panini",
+                "Company",
+                {
+                    "name": "Panini"
+                }
+            ],
+            [
+                "Electronic_Arts",
+                "Company",
+                {
+                    "name": "Electronic Arts"
+                }
+            ],
+            [
+                "Uruguay_1930",
+                "Tournament",
+                {
+                    "year": 1930,
+                    "host": "Uruguay"
+                }
+            ],
+            [
+                "Italy_1934",
+                "Tournament",
+                {
+                    "year": 1934,
+                    "host": "Italy"
+                }
+            ],
+            [
+                "France_1938",
+                "Tournament",
+                {
+                    "year": 1938,
+                    "host": "France"
+                }
+            ],
+            [
+                "Brazil_1950",
+                "Tournament",
+                {
+                    "year": 1950,
+                    "host": "Brazil"
+                }
+            ],
+            [
+                "Switzerland_1954",
+                "Tournament",
+                {
+                    "year": 1954,
+                    "host": "Switzerland"
+                }
+            ],
+            [
+                "Sweden_1958",
+                "Tournament",
+                {
+                    "year": 1958,
+                    "host": "Sweden"
+                }
+            ],
+            [
+                "Chile_1962",
+                "Tournament",
+                {
+                    "year": 1962,
+                    "host": "Chile"
+                }
+            ],
+            [
+                "England_1966",
+                "Tournament",
+                {
+                    "year": 1966,
+                    "host": "England"
+                }
+            ],
+            [
+                "Mexico_1970",
+                "Tournament",
+                {
+                    "year": 1970,
+                    "host": "Mexico"
+                }
+            ],
+            [
+                "West_Germany_1974",
+                "Tournament",
+                {
+                    "year": 1974,
+                    "host": "West Germany"
+                }
+            ]
+        ],
+        "Edges": [
+            [
+                "UEFA",
+                "hosted",
+                "FIFA_World_Cup",
+                {
+                    "times": 11
+                }
+            ],
+            [
+                "CONMEBOL",
+                "hosted",
+                "FIFA_World_Cup",
+                {
+                    "times": 5
+                }
+            ],
+            [
+                "CONCACAF",
+                "hosted",
+                "FIFA_World_Cup",
+                {
+                    "times": 3
+                }
+            ],
+            [
+                "AFC",
+                "hosted",
+                "FIFA_World_Cup",
+                {
+                    "times": 2
+                }
+            ],
+            [
+                "CAF",
+                "hosted",
+                "FIFA_World_Cup",
+                {
+                    "times": 1
+                }
+            ],
+            [
+                "OFC",
+                "hosted",
+                "FIFA_World_Cup",
+                {
+                    "times": 0
+                }
+            ],
+            [
+                "Adidas",
+                "supplies",
+                "FIFA_World_Cup",
+                {
+                    "item": "official match balls",
+                    "since": 1970
+                }
+            ],
+            [
+                "Panini",
+                "publishes",
+                "FIFA_World_Cup",
+                {
+                    "item": "sticker album",
+                    "since": 1970
+                }
+            ],
+            [
+                "Electronic_Arts",
+                "licenses",
+                "FIFA_World_Cup",
+                {
+                    "item": "video games",
+                    "since": 1986
+                }
+            ],
+            [
+                "Uruguay_1930",
+                "winner",
+                "Uruguay",
+                {}
+            ],
+            [
+                "Italy_1934",
+                "winner",
+                "Italy",
+                {}
+            ],
+            [
+                "France_1938",
+                "winner",
+                "Italy",
+                {}
+            ],
+            [
+                "Brazil_1950",
+                "winner",
+                "Uruguay",
+                {}
+            ],
+            [
+                "Switzerland_1954",
+                "winner",
+                "West Germany",
+                {}
+            ],
+            [
+                "Sweden_1958",
+                "winner",
+                "Brazil",
+                {}
+            ],
+            [
+                "Chile_1962",
+                "winner",
+                "Brazil",
+                {}
+            ],
+            [
+                "England_1966",
+                "winner",
+                "England",
+                {}
+            ],
+            [
+                "Mexico_1970",
+                "winner",
+                "Brazil",
+                {}
+            ],
+            [
+                "West_Germany_1974",
+                "winner",
+                "West Germany",
+                {}
+            ]
+        ]
+    }, {
+        "Nodes": [
+            [
+                "brazil",
+                "Country",
+                {
+                    "name": "Brazil",
+                    "world_cup_titles": 5
+                }
+            ],
+            [
+                "germany",
+                "Country",
+                {
+                    "name": "Germany",
+                    "world_cup_titles": 4
+                }
+            ],
+            [
+                "italy",
+                "Country",
+                {
+                    "name": "Italy",
+                    "world_cup_titles": 4
+                }
+            ],
+            [
+                "argentina",
+                "Country",
+                {
+                    "name": "Argentina",
+                    "world_cup_titles": 3
+                }
+            ],
+            [
+                "france",
+                "Country",
+                {
+                    "name": "France",
+                    "world_cup_titles": 2
+                }
+            ],
+            [
+                "uruguay",
+                "Country",
+                {
+                    "name": "Uruguay",
+                    "world_cup_titles": 2
+                }
+            ],
+            [
+                "england",
+                "Country",
+                {
+                    "name": "England",
+                    "world_cup_titles": 1
+                }
+            ],
+            [
+                "spain",
+                "Country",
+                {
+                    "name": "Spain",
+                    "world_cup_titles": 1
+                }
+            ],
+            [
+                "netherlands",
+                "Country",
+                {
+                    "name": "Netherlands"
+                }
+            ],
+            [
+                "croatia",
+                "Country",
+                {
+                    "name": "Croatia"
+                }
+            ],
+            [
+                "fifa_world_cup",
+                "Tournament",
+                {
+                    "name": "FIFA World Cup"
+                }
+            ]
+        ],
+        "Edges": [
+            [
+                "brazil",
+                "won",
+                "fifa_world_cup",
+                {
+                    "years": [
+                        1958,
+                        1962,
+                        1970,
+                        1994,
+                        2002
+                    ]
+                }
+            ],
+            [
+                "germany",
+                "won",
+                "fifa_world_cup",
+                {
+                    "years": [
+                        1954,
+                        1974,
+                        1990,
+                        2014
+                    ]
+                }
+            ],
+            [
+                "italy",
+                "won",
+                "fifa_world_cup",
+                {
+                    "years": [
+                        1934,
+                        1938,
+                        1982,
+                        2006
+                    ]
+                }
+            ],
+            [
+                "argentina",
+                "won",
+                "fifa_world_cup",
+                {
+                    "years": [
+                        1978,
+                        1986,
+                        2022
+                    ]
+                }
+            ],
+            [
+                "france",
+                "won",
+                "fifa_world_cup",
+                {
+                    "years": [
+                        1998,
+                        2018
+                    ]
+                }
+            ],
+            [
+                "uruguay",
+                "won",
+                "fifa_world_cup",
+                {
+                    "years": [
+                        1930,
+                        1950
+                    ]
+                }
+            ],
+            [
+                "england",
+                "won",
+                "fifa_world_cup",
+                {
+                    "years": [
+                        1966
+                    ]
+                }
+            ],
+            [
+                "spain",
+                "won",
+                "fifa_world_cup",
+                {
+                    "years": [
+                        2010
+                    ]
+                }
+            ],
+            [
+                "netherlands",
+                "runner_up",
+                "fifa_world_cup",
+                {
+                    "years": [
+                        1974,
+                        1978,
+                        2010
+                    ]
+                }
+            ],
+            [
+                "croatia",
+                "runner_up",
+                "fifa_world_cup",
+                {
+                    "years": [
+                        2018
+                    ]
+                }
+            ]
+        ]
+    }, {
+        "Nodes": [
+            [
+                "brazil",
+                "Country",
+                {
+                    "name": "Brazil"
+                }
+            ],
+            [
+                "argentina",
+                "Country",
+                {
+                    "name": "Argentina"
+                }
+            ],
+            [
+                "spain",
+                "Country",
+                {
+                    "name": "Spain"
+                }
+            ],
+            [
+                "germany",
+                "Country",
+                {
+                    "name": "Germany"
+                }
+            ],
+            [
+                "italy",
+                "Country",
+                {
+                    "name": "Italy"
+                }
+            ],
+            [
+                "france",
+                "Country",
+                {
+                    "name": "France"
+                }
+            ],
+            [
+                "mexico",
+                "Country",
+                {
+                    "name": "Mexico"
+                }
+            ],
+            [
+                "portugal",
+                "Country",
+                {
+                    "name": "Portugal"
+                }
+            ],
+            [
+                "antonio_carbajal",
+                "Player",
+                {
+                    "name": "Antonio Carbajal",
+                    "country": "Mexico"
+                }
+            ],
+            [
+                "rafael_marquez",
+                "Player",
+                {
+                    "name": "Rafael Márquez",
+                    "country": "Mexico"
+                }
+            ],
+            [
+                "andres_guardado",
+                "Player",
+                {
+                    "name": "Andrés Guardado",
+                    "country": "Mexico"
+                }
+            ],
+            [
+                "lothar_matthaus",
+                "Player",
+                {
+                    "name": "Lothar Matthäus",
+                    "country": "Germany"
+                }
+            ],
+            [
+                "lionel_messi",
+                "Player",
+                {
+                    "name": "Lionel Messi",
+                    "country": "Argentina"
+                }
+            ],
+            [
+                "cristiano_ronaldo",
+                "Player",
+                {
+                    "name": "Cristiano Ronaldo",
+                    "country": "Portugal"
+                }
+            ],
+            [
+                "miroslav_klose",
+                "Player",
+                {
+                    "name": "Miroslav Klose",
+                    "country": "Germany"
+                }
+            ],
+            [
+                "pele",
+                "Player",
+                {
+                    "name": "Pelé",
+                    "country": "Brazil"
+                }
+            ],
+            [
+                "mario_zagallo",
+                "Person",
+                {
+                    "name": "Mário Zagallo",
+                    "country": "Brazil"
+                }
+            ],
+            [
+                "franz_beckenbauer",
+                "Person",
+                {
+                    "name": "Franz Beckenbauer",
+                    "country": "Germany"
+                }
+            ],
+            [
+                "didier_deschamps",
+                "Person",
+                {
+                    "name": "Didier Deschamps",
+                    "country": "France"
+                }
+            ],
+            [
+                "vittorio_pozzo",
+                "Coach",
+                {
+                    "name": "Vittorio Pozzo",
+                    "country": "Italy"
+                }
+            ],
+            [
+                "world_cup",
+                "Tournament",
+                {
+                    "name": "FIFA World Cup"
+                }
+            ]
+        ],
+        "Edges": [
+            [
+                "brazil",
+                "won",
+                "world_cup",
+                {
+                    "times": 5
+                }
+            ],
+            [
+                "argentina",
+                "won",
+                "world_cup",
+                {
+                    "times": 3
+                }
+            ],
+            [
+                "germany",
+                "won",
+                "world_cup",
+                {
+                    "times": 4
+                }
+            ],
+            [
+                "spain",
+                "won",
+                "world_cup",
+                {
+                    "times": 1
+                }
+            ],
+            [
+                "italy",
+                "won",
+                "world_cup",
+                {
+                    "times": 4
+                }
+            ],
+            [
+                "france",
+                "won",
+                "world_cup",
+                {
+                    "times": 2
+                }
+            ],
+            [
+                "antonio_carbajal",
+                "played_in",
+                "world_cup",
+                {
+                    "tournaments": 5
+                }
+            ],
+            [
+                "rafael_marquez",
+                "played_in",
+                "world_cup",
+                {
+                    "tournaments": 5
+                }
+            ],
+            [
+                "andres_guardado",
+                "played_in",
+                "world_cup",
+                {
+                    "tournaments": 5
+                }
+            ],
+            [
+                "lothar_matthaus",
+                "played_in",
+                "world_cup",
+                {
+                    "tournaments": 5
+                }
+            ],
+            [
+                "lionel_messi",
+                "played_in",
+                "world_cup",
+                {
+                    "tournaments": 5,
+                    "matches": 26
+                }
+            ],
+            [
+                "cristiano_ronaldo",
+                "played_in",
+                "world_cup",
+                {
+                    "tournaments": 5
+                }
+            ],
+            [
+                "miroslav_klose",
+                "top_scorer",
+                "world_cup",
+                {
+                    "goals": 16
+                }
+            ],
+            [
+                "pele",
+                "won",
+                "world_cup",
+                {
+                    "times": 3
+                }
+            ],
+            [
+                "mario_zagallo",
+                "won_as_player_and_coach",
+                "world_cup",
+                {}
+            ],
+            [
+                "franz_beckenbauer",
+                "won_as_player_and_coach",
+                "world_cup",
+                {}
+            ],
+            [
+                "didier_deschamps",
+                "won_as_player_and_coach",
+                "world_cup",
+                {}
+            ],
+            [
+                "vittorio_pozzo",
+                "coached",
+                "world_cup",
+                {
+                    "wins": 2
+                }
+            ]
+        ]
+    }, {
+        "Nodes": [
+            [
+                "just_fontaine",
+                "Player",
+                {
+                    "name": "Just Fontaine",
+                    "goals": 13,
+                    "matches": 6,
+                    "goals_per_match": 2.17
+                }
+            ],
+            [
+                "lionel_messi",
+                "Player",
+                {
+                    "name": "Lionel Messi",
+                    "goals": 13,
+                    "matches": 26,
+                    "goals_per_match": 0.50
+                }
+            ],
+            [
+                "kylian_mbappe",
+                "Player",
+                {
+                    "name": "Kylian Mbappé",
+                    "goals": 12,
+                    "matches": 14,
+                    "goals_per_match": 0.86
+                }
+            ],
+            [
+                "pele",
+                "Player",
+                {
+                    "name": "Pelé",
+                    "goals": 12,
+                    "matches": 14,
+                    "goals_per_match": 0.86
+                }
+            ],
+            [
+                "sandor_kocsis",
+                "Player",
+                {
+                    "name": "Sándor Kocsis",
+                    "goals": 11,
+                    "matches": 5,
+                    "goals_per_match": 2.20
+                }
+            ],
+            [
+                "jurgen_klinsmann",
+                "Player",
+                {
+                    "name": "Jürgen Klinsmann",
+                    "goals": 11,
+                    "matches": 17,
+                    "goals_per_match": 0.65
+                }
+            ],
+            [
+                "brazil",
+                "Country",
+                {
+                    "name": "Brazil",
+                    "goals_scored": 237
+                }
+            ],
+            [
+                "germany",
+                "Country",
+                {
+                    "name": "Germany",
+                    "goals_scored": 232
+                }
+            ],
+            [
+                "argentina",
+                "Country",
+                {
+                    "name": "Argentina",
+                    "goals_scored": 152
+                }
+            ],
+            [
+                "france",
+                "Country",
+                {
+                    "name": "France",
+                    "goals_scored": 136
+                }
+            ],
+            [
+                "golden_ball",
+                "Award",
+                {
+                    "name": "Golden Ball",
+                    "first_awarded": 1982
+                }
+            ],
+            [
+                "golden_boot",
+                "Award",
+                {
+                    "name": "Golden Boot",
+                    "first_awarded": 1982
+                }
+            ],
+            [
+                "golden_glove",
+                "Award",
+                {
+                    "name": "Golden Glove",
+                    "first_awarded": 1994
+                }
+            ],
+            [
+                "young_player_award",
+                "Award",
+                {
+                    "name": "FIFA Young Player Award",
+                    "first_awarded": 2006
+                }
+            ],
+            [
+                "fair_play_trophy",
+                "Award",
+                {
+                    "name": "FIFA Fair Play Trophy",
+                    "first_awarded": 1970
+                }
+            ]
+        ],
+        "Edges": [
+            [
+                "golden_ball",
+                "awarded_to",
+                "lionel_messi",
+                {
+                    "year": 2022
+                }
+            ],
+            [
+                "golden_boot",
+                "awarded_to",
+                "kylian_mbappe",
+                {
+                    "year": 2022,
+                    "goals": 8
+                }
+            ],
+            [
+                "golden_glove",
+                "awarded_to",
+                "emiliano_martinez",
+                {
+                    "year": 2022,
+                    "clean_sheets": 3
+                }
+            ],
+            [
+                "young_player_award",
+                "awarded_to",
+                "enzo_fernandez",
+                {
+                    "year": 2022
+                }
+            ],
+            [
+                "fair_play_trophy",
+                "awarded_to",
+                "england",
+                {
+                    "year": 2022
+                }
+            ]
+        ]
+    }
+]

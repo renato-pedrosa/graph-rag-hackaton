@@ -1,3 +1,4 @@
+import os
 from neo4j_graphrag.experimental.components.pdf_loader import PdfLoader
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
@@ -22,12 +23,12 @@ def return_node_labels():
     
 
 def return_prompt():
-    return '''
-You are a political researcher tasks with extracting information from papers 
-and structuring it in a property graph to inform further political and research Q&A.
+    return """
+You are a journalist specialized in FIFA World Cup researcher tasks with extracting information from papers 
+and structuring it in a property graph to inform further FIFA World Cup research Q&A.
 
 Extract the entities (nodes) and specify their type from the following Input text.
-Also extract the relationships between these nodes. the relationship direction goes from the start node to the end node. 
+Also extract the relationships between these nodes. the relationship direction goes from the start node to the end node. Make sure that Nodes with the same name are being set with the same id.
 
 
 Return result as JSON using the following format:
@@ -36,7 +37,7 @@ Return result as JSON using the following format:
 
 - Use only the information from the Input text.  Do not add any additional information.  
 - If the input text is empty, return empty Json. 
-- Make sure to create as many nodes and relationships as needed to offer rich political context for further research.
+- Make sure to create as many nodes and relationships as needed to offer rich FIFA World Cup context for further research.
 - An AI knowledge assistant must be able to read this graph and immediately understand the context to inform detailed research questions. 
 - Multiple documents will be ingested from different sources and we are using this property graph to connect information, so make sure entity types are fairly general. 
 
@@ -55,7 +56,7 @@ Examples:
 Input text:
 
 {text}
-'''
+"""
 
 
 
@@ -75,6 +76,23 @@ instruction = """
       }
 """
 
+def extract_node_identifiers(json_data, key: str):
+    node_identifiers = []
+
+    # Loop through each object in the main array
+    for item in json_data:
+        # Check if the item has a 'Nodes' key
+        if key in item:
+            # Loop through each node in the Nodes array
+            for node in item[key]:
+                # Append the first position (identifier) to our list
+                if node and len(node) > 1:
+                    # check if the identifier is already in the list
+                    if node[1] not in node_identifiers:
+                        node_identifiers.append(node[1])
+
+    return node_identifiers
+
 
 async def generate_nodes():
 
@@ -83,65 +101,87 @@ async def generate_nodes():
 
     # logger.info(f"PDF text: {pdf_text.text}")
 
-    # pipeline = Pipeline()
-    text_splitter = FixedSizeSplitter(chunk_size=5000, chunk_overlap=200, approximate=True)
-    # pipeline.add_component(text_splitter, "text_splitter")
-    splitter_result = await text_splitter.run(text=pdf_text.text)
+    # check if json file exists load from file
+    if os.path.exists("knowledge_graph/fifa_nodes_example.json"):
+        with open("knowledge_graph/fifa_nodes_example.json", "r") as f:
+            results = json.load(f)
 
-    logger.info(f"Splitter Chunks len: {len(splitter_result.chunks)}")
+    else:
+        # pipeline = Pipeline()
+        text_splitter = FixedSizeSplitter(
+            chunk_size=5000, chunk_overlap=200, approximate=True
+        )
+        # pipeline.add_component(text_splitter, "text_splitter")
+        splitter_result = await text_splitter.run(text=pdf_text.text)
 
-    for chunk in splitter_result.chunks:
-        # Create prompt template
-        prompt_template = PromptTemplate.from_template("""
-        {instruction}
-        Here is document. {documents}
+        logger.info(f"Splitter Chunks len: {len(splitter_result.chunks)}")
 
-        Return only the JSON object with the nodes and edges, do not add any additional text.
-    """)
+        for chunk in splitter_result.chunks:
+            # Create prompt template
+            prompt_template = PromptTemplate.from_template("""
+            {instruction}
+            Here is document. {documents}
 
-        # logger.info(f"Prompt template created: {prompt_template}")
+            Return only the JSON object with the nodes and edges, do not add any additional text.
+        """)
 
-        logger.info("Creating prompt template...")
-        llm = ChatBedrock(model="anthropic.claude-3-5-sonnet-20240620-v1:0")
-        llm_chain = LLMChain(prompt=prompt_template, llm=llm)
+            # logger.info(f"Prompt template created: {prompt_template}")
 
-        logger.info("Calling prompt template...")
+            logger.info("Creating prompt template...")
+            llm = ChatBedrock(model="anthropic.claude-3-5-sonnet-20240620-v1:0")
+            llm_chain = LLMChain(prompt=prompt_template, llm=llm)
 
-        result = llm_chain.run(instruction=instruction, documents=chunk.text)
-        results.append(result)
+            logger.info("Calling prompt template...")
 
-    logger.info(f"Prompt template result: {results}")
+            result = llm_chain.run(instruction=instruction, documents=chunk.text)
+            results.append(result)
 
-    # result_parsed = parser(result)
+    # logger.info(f"Prompt template result: {results}")
+
+    node_labels = extract_node_identifiers(results, "Nodes")
+    # print(f"Node labels: {node_labels}")
+    rel_types = extract_node_identifiers(results, "Edges")
+    # print(f"Relationship types: {rel_types}")
+
+    # results_parsed = parser(results)
     # print(result_parsed)
-    # net = Network(
-    #     notebook=True,
-    #     cdn_resources="remote",
-    #     bgcolor="#222222",
-    #     font_color="white",
-    #     height="750px",
-    #     width="100%",
-    #     select_menu=True,
-    #     filter_menu=True,
-    # )
+    net = Network(
+        notebook=True,
+        cdn_resources="remote",
+        bgcolor="#222222",
+        font_color="white",
+        height="750px",
+        width="100%",
+        select_menu=True,
+        filter_menu=True,
+    )
 
-    # # Create Nodes and Edges
-    # for node in result_parsed.get("Nodes"):
-    #     net.add_node(node[0], label=node[0], title=str(node[2]))
+    nodes = []
+    edges = []
+    for result in results:
+        # print(f"Result: {result}")
+        # result_parsed = parser(result)
+        # merge all nodes and edges
+        nodes.extend(result.get("Nodes"))
+        edges.extend(result.get("Edges"))
 
-    # for edge in result_parsed.get("Edges"):
-    #     from_node, title_edge, to_node = edge[0], edge[1], edge[2]
-    #     try:
-    #         net.add_edge(from_node, to=to_node, title=title_edge)
-    #     except Exception as e:
-    #         logger.error(f"Error adding edge: {e}")
-    #         net.add_node(to_node, label=to_node, title=str(to_node))
-    #         net.add_edge(from_node, to=to_node, title=title_edge)
-    #         # print(relationship)
+    # Create Nodes and Edges
+    for node in nodes:
+        net.add_node(node[0].lower(), label=node[0].lower(), title=str(node[2]))
 
-    # net.show("fifa-edges.html")
+    for edge in edges:
+        from_node, title_edge, to_node = edge[0].lower(), edge[1], edge[2].lower()
+        try:
+            net.add_edge(from_node, to=to_node, title=title_edge)
+        except Exception as e:
+            logger.error(f"Error adding edge: {e}")
+            net.add_node(to_node, label=to_node, title=str(to_node))
+            net.add_edge(from_node, to=to_node, title=title_edge)
+            # print(relationship)
 
-    # return result
+    net.show("fifa-edges.html")
+
+    return node_labels, rel_types
 
 def parser(result):
     """

@@ -238,6 +238,75 @@ function highlightFilter(filter) {
              }
 
              
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 750px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
 
              
 
@@ -273,25 +342,229 @@ function highlightFilter(filter) {
                                 
                                     <option value="italy">italy</option>
                                 
-                                    <option value="france">france</option>
-                                
                                     <option value="uruguay">uruguay</option>
+                                
+                                    <option value="france">france</option>
                                 
                                     <option value="england">england</option>
                                 
                                     <option value="spain">spain</option>
                                 
-                                    <option value="miroslav_klose">miroslav_klose</option>
+                                    <option value="qatar">qatar</option>
                                 
-                                    <option value="ronaldo">ronaldo</option>
+                                    <option value="canada">canada</option>
                                 
-                                    <option value="gerd_muller">gerd_muller</option>
+                                    <option value="mexico">mexico</option>
                                 
-                                    <option value="just_fontaine">just_fontaine</option>
+                                    <option value="united_states">united_states</option>
+                                
+                                    <option value="jules_rimet">jules_rimet</option>
+                                
+                                    <option value="estadio_centenario">estadio_centenario</option>
+                                
+                                    <option value="switzerland">switzerland</option>
+                                
+                                    <option value="fa_england">fa_england</option>
+                                
+                                    <option value="west_auckland">west_auckland</option>
+                                
+                                    <option value="lipton_competition">lipton_competition</option>
+                                
+                                    <option value="olympic_tournament">olympic_tournament</option>
+                                
+                                    <option value="world_cup">world_cup</option>
+                                
+                                    <option value="belgium">belgium</option>
+                                
+                                    <option value="lucien_laurent">lucien_laurent</option>
+                                
+                                    <option value="europe">europe</option>
+                                
+                                    <option value="south_america">south_america</option>
+                                
+                                    <option value="africa">africa</option>
+                                
+                                    <option value="asia">asia</option>
+                                
+                                    <option value="north_america">north_america</option>
+                                
+                                    <option value="oceania">oceania</option>
+                                
+                                    <option value="cuba">cuba</option>
+                                
+                                    <option value="north_korea">north_korea</option>
+                                
+                                    <option value="cameroon">cameroon</option>
+                                
+                                    <option value="south_korea">south_korea</option>
+                                
+                                    <option value="senegal">senegal</option>
+                                
+                                    <option value="ghana">ghana</option>
+                                
+                                    <option value="costa_rica">costa_rica</option>
+                                
+                                    <option value="morocco">morocco</option>
+                                
+                                    <option value="sepp_blatter">sepp_blatter</option>
+                                
+                                    <option value="michel_platini">michel_platini</option>
+                                
+                                    <option value="gianni_infantino">gianni_infantino</option>
+                                
+                                    <option value="chuck_blazer">chuck_blazer</option>
+                                
+                                    <option value="jerome_valcke">jerome_valcke</option>
+                                
+                                    <option value="blatter">blatter</option>
+                                
+                                    <option value="platini">platini</option>
+                                
+                                    <option value="womens_world_cup">womens_world_cup</option>
+                                
+                                    <option value="olympics">olympics</option>
+                                
+                                    <option value="confederations_cup">confederations_cup</option>
+                                
+                                    <option value="jules_rimet_trophy">jules_rimet_trophy</option>
+                                
+                                    <option value="fifa_world_cup_trophy">fifa_world_cup_trophy</option>
+                                
+                                    <option value="gazzaniga">gazzaniga</option>
+                                
+                                    <option value="gold_medal">gold_medal</option>
+                                
+                                    <option value="silver_medal">silver_medal</option>
+                                
+                                    <option value="bronze_medal">bronze_medal</option>
+                                
+                                    <option value="fifa_champions_badge">fifa_champions_badge</option>
+                                
+                                    <option value="qualification_tournament">qualification_tournament</option>
+                                
+                                    <option value="final_tournament">final_tournament</option>
+                                
+                                    <option value="group_stage">group_stage</option>
+                                
+                                    <option value="knockout_stage">knockout_stage</option>
+                                
+                                    <option value="points_system">points_system</option>
+                                
+                                    <option value="tiebreaker_system">tiebreaker_system</option>
+                                
+                                    <option value="fair_play_points">fair_play_points</option>
+                                
+                                    <option value="round_of_16">round_of_16</option>
+                                
+                                    <option value="quarter_finals">quarter_finals</option>
+                                
+                                    <option value="semi_finals">semi_finals</option>
+                                
+                                    <option value="third_place_match">third_place_match</option>
+                                
+                                    <option value="final">final</option>
+                                
+                                    <option value="2026_world_cup">2026_world_cup</option>
+                                
+                                    <option value="2030_world_cup">2030_world_cup</option>
+                                
+                                    <option value="japan">japan</option>
+                                
+                                    <option value="south_africa">south_africa</option>
+                                
+                                    <option value="russia">russia</option>
+                                
+                                    <option value="uefa">uefa</option>
+                                
+                                    <option value="conmebol">conmebol</option>
+                                
+                                    <option value="concacaf">concacaf</option>
+                                
+                                    <option value="afc">afc</option>
+                                
+                                    <option value="caf">caf</option>
+                                
+                                    <option value="ofc">ofc</option>
+                                
+                                    <option value="adidas">adidas</option>
+                                
+                                    <option value="panini">panini</option>
+                                
+                                    <option value="electronic_arts">electronic_arts</option>
+                                
+                                    <option value="uruguay_1930">uruguay_1930</option>
+                                
+                                    <option value="italy_1934">italy_1934</option>
+                                
+                                    <option value="france_1938">france_1938</option>
+                                
+                                    <option value="brazil_1950">brazil_1950</option>
+                                
+                                    <option value="switzerland_1954">switzerland_1954</option>
+                                
+                                    <option value="sweden_1958">sweden_1958</option>
+                                
+                                    <option value="chile_1962">chile_1962</option>
+                                
+                                    <option value="england_1966">england_1966</option>
+                                
+                                    <option value="mexico_1970">mexico_1970</option>
+                                
+                                    <option value="west_germany_1974">west_germany_1974</option>
+                                
+                                    <option value="netherlands">netherlands</option>
+                                
+                                    <option value="croatia">croatia</option>
+                                
+                                    <option value="portugal">portugal</option>
+                                
+                                    <option value="antonio_carbajal">antonio_carbajal</option>
+                                
+                                    <option value="rafael_marquez">rafael_marquez</option>
+                                
+                                    <option value="andres_guardado">andres_guardado</option>
+                                
+                                    <option value="lothar_matthaus">lothar_matthaus</option>
                                 
                                     <option value="lionel_messi">lionel_messi</option>
                                 
+                                    <option value="cristiano_ronaldo">cristiano_ronaldo</option>
+                                
+                                    <option value="miroslav_klose">miroslav_klose</option>
+                                
                                     <option value="pele">pele</option>
+                                
+                                    <option value="mario_zagallo">mario_zagallo</option>
+                                
+                                    <option value="franz_beckenbauer">franz_beckenbauer</option>
+                                
+                                    <option value="didier_deschamps">didier_deschamps</option>
+                                
+                                    <option value="vittorio_pozzo">vittorio_pozzo</option>
+                                
+                                    <option value="just_fontaine">just_fontaine</option>
+                                
+                                    <option value="kylian_mbappe">kylian_mbappe</option>
+                                
+                                    <option value="sandor_kocsis">sandor_kocsis</option>
+                                
+                                    <option value="jurgen_klinsmann">jurgen_klinsmann</option>
+                                
+                                    <option value="golden_ball">golden_ball</option>
+                                
+                                    <option value="golden_boot">golden_boot</option>
+                                
+                                    <option value="golden_glove">golden_glove</option>
+                                
+                                    <option value="young_player_award">young_player_award</option>
+                                
+                                    <option value="fair_play_trophy">fair_play_trophy</option>
+                                
+                                    <option value="west germany">west germany</option>
+                                
+                                    <option value="emiliano_martinez">emiliano_martinez</option>
+                                
+                                    <option value="enzo_fernandez">enzo_fernandez</option>
                                 
                             </select>
                         </div>
@@ -347,6 +620,15 @@ function highlightFilter(filter) {
             <div id="mynetwork" class="card-body"></div>
         </div>
 
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
         
         
 
@@ -513,8 +795,8 @@ function highlightFilter(filter) {
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#97c2fc", "font": {"color": "white"}, "id": "fifa_world_cup", "label": "fifa_world_cup", "shape": "dot", "title": "{\u0027name\u0027: \u0027FIFA World Cup\u0027, \u0027founded\u0027: 1930, \u0027organizer\u0027: \u0027FIFA\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "fifa", "label": "fifa", "shape": "dot", "title": "{\u0027name\u0027: \u0027FIFA\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "argentina", "label": "argentina", "shape": "dot", "title": "{\u0027name\u0027: \u0027Argentina\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "brazil", "label": "brazil", "shape": "dot", "title": "{\u0027name\u0027: \u0027Brazil\u0027, \u0027titles\u0027: 5}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "germany", "label": "germany", "shape": "dot", "title": "{\u0027name\u0027: \u0027Germany\u0027, \u0027titles\u0027: 4}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "italy", "label": "italy", "shape": "dot", "title": "{\u0027name\u0027: \u0027Italy\u0027, \u0027titles\u0027: 4}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "france", "label": "france", "shape": "dot", "title": "{\u0027name\u0027: \u0027France\u0027, \u0027titles\u0027: 2}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "uruguay", "label": "uruguay", "shape": "dot", "title": "{\u0027name\u0027: \u0027Uruguay\u0027, \u0027titles\u0027: 2}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "england", "label": "england", "shape": "dot", "title": "{\u0027name\u0027: \u0027England\u0027, \u0027titles\u0027: 1}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "spain", "label": "spain", "shape": "dot", "title": "{\u0027name\u0027: \u0027Spain\u0027, \u0027titles\u0027: 1}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "miroslav_klose", "label": "miroslav_klose", "shape": "dot", "title": "{\u0027name\u0027: \u0027Miroslav Klose\u0027, \u0027goals\u0027: 16}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "ronaldo", "label": "ronaldo", "shape": "dot", "title": "{\u0027name\u0027: \u0027Ronaldo\u0027, \u0027goals\u0027: 15}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "gerd_muller", "label": "gerd_muller", "shape": "dot", "title": "{\u0027name\u0027: \u0027Gerd M\u00fcller\u0027, \u0027goals\u0027: 14}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "just_fontaine", "label": "just_fontaine", "shape": "dot", "title": "{\u0027name\u0027: \u0027Just Fontaine\u0027, \u0027goals\u0027: 13}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "lionel_messi", "label": "lionel_messi", "shape": "dot", "title": "{\u0027name\u0027: \u0027Lionel Messi\u0027, \u0027goals\u0027: 13, \u0027matches\u0027: 26}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "pele", "label": "pele", "shape": "dot", "title": "{\u0027name\u0027: \u0027Pel\u00e9\u0027, \u0027titles\u0027: 3}"}]);
-                  edges = new vis.DataSet([{"from": "fifa", "title": "organizes", "to": "fifa_world_cup"}, {"from": "argentina", "title": "won", "to": "fifa_world_cup"}, {"from": "brazil", "title": "won", "to": "fifa_world_cup"}, {"from": "germany", "title": "won", "to": "fifa_world_cup"}, {"from": "italy", "title": "won", "to": "fifa_world_cup"}, {"from": "france", "title": "won", "to": "fifa_world_cup"}, {"from": "uruguay", "title": "won", "to": "fifa_world_cup"}, {"from": "england", "title": "won", "to": "fifa_world_cup"}, {"from": "spain", "title": "won", "to": "fifa_world_cup"}, {"from": "miroslav_klose", "title": "top_scorer", "to": "fifa_world_cup"}, {"from": "ronaldo", "title": "played_in", "to": "fifa_world_cup"}, {"from": "gerd_muller", "title": "played_in", "to": "fifa_world_cup"}, {"from": "just_fontaine", "title": "played_in", "to": "fifa_world_cup"}, {"from": "lionel_messi", "title": "played_in", "to": "fifa_world_cup"}, {"from": "pele", "title": "won", "to": "fifa_world_cup"}]);
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "font": {"color": "white"}, "id": "fifa_world_cup", "label": "fifa_world_cup", "shape": "dot", "title": "{\u0027name\u0027: \u0027FIFA World Cup\u0027, \u0027founded\u0027: 1930, \u0027region\u0027: \u0027International\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "fifa", "label": "fifa", "shape": "dot", "title": "{\u0027name\u0027: \u0027FIFA\u0027, \u0027full_name\u0027: \u0027F\u00e9d\u00e9ration Internationale de Football Association\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "argentina", "label": "argentina", "shape": "dot", "title": "{\u0027name\u0027: \u0027Argentina\u0027, \u0027titles\u0027: 3}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "brazil", "label": "brazil", "shape": "dot", "title": "{\u0027name\u0027: \u0027Brazil\u0027, \u0027titles\u0027: 5}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "germany", "label": "germany", "shape": "dot", "title": "{\u0027name\u0027: \u0027Germany\u0027, \u0027titles\u0027: 4}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "italy", "label": "italy", "shape": "dot", "title": "{\u0027name\u0027: \u0027Italy\u0027, \u0027titles\u0027: 4}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "uruguay", "label": "uruguay", "shape": "dot", "title": "{\u0027name\u0027: \u0027Uruguay\u0027, \u0027titles\u0027: 2}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "france", "label": "france", "shape": "dot", "title": "{\u0027name\u0027: \u0027France\u0027, \u0027titles\u0027: 2}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "england", "label": "england", "shape": "dot", "title": "{\u0027name\u0027: \u0027England\u0027, \u0027titles\u0027: 1}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "spain", "label": "spain", "shape": "dot", "title": "{\u0027name\u0027: \u0027Spain\u0027, \u0027titles\u0027: 1}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "qatar", "label": "qatar", "shape": "dot", "title": "{\u0027name\u0027: \u0027Qatar\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "canada", "label": "canada", "shape": "dot", "title": "{\u0027name\u0027: \u0027Canada\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "mexico", "label": "mexico", "shape": "dot", "title": "{\u0027name\u0027: \u0027Mexico\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "united_states", "label": "united_states", "shape": "dot", "title": "{\u0027name\u0027: \u0027United States\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "jules_rimet", "label": "jules_rimet", "shape": "dot", "title": "{\u0027name\u0027: \u0027Jules Rimet\u0027, \u0027role\u0027: \u0027FIFA president\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "estadio_centenario", "label": "estadio_centenario", "shape": "dot", "title": "{\u0027name\u0027: \u0027Estadio Centenario\u0027, \u0027location\u0027: \u0027Montevideo, Uruguay\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "switzerland", "label": "switzerland", "shape": "dot", "title": "{\u0027name\u0027: \u0027Switzerland\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "fa_england", "label": "fa_england", "shape": "dot", "title": "{\u0027name\u0027: \u0027FA of England\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "west_auckland", "label": "west_auckland", "shape": "dot", "title": "{\u0027name\u0027: \u0027West Auckland\u0027, \u0027type\u0027: \u0027amateur\u0027, \u0027location\u0027: \u0027County Durham\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "lipton_competition", "label": "lipton_competition", "shape": "dot", "title": "{\u0027name\u0027: \u0027Lipton competition\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "olympic_tournament", "label": "olympic_tournament", "shape": "dot", "title": "{\u0027name\u0027: \u0027Olympic football tournament\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "world_cup", "label": "world_cup", "shape": "dot", "title": "{\u0027name\u0027: \u0027FIFA World Cup\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "belgium", "label": "belgium", "shape": "dot", "title": "{\u0027name\u0027: \u0027Belgium\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "lucien_laurent", "label": "lucien_laurent", "shape": "dot", "title": "{\u0027name\u0027: \u0027Lucien Laurent\u0027, \u0027nationality\u0027: \u0027French\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "europe", "label": "europe", "shape": "dot", "title": "{\u0027name\u0027: \u0027Europe\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "south_america", "label": "south_america", "shape": "dot", "title": "{\u0027name\u0027: \u0027South America\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "africa", "label": "africa", "shape": "dot", "title": "{\u0027name\u0027: \u0027Africa\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "asia", "label": "asia", "shape": "dot", "title": "{\u0027name\u0027: \u0027Asia\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "north_america", "label": "north_america", "shape": "dot", "title": "{\u0027name\u0027: \u0027North America\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "oceania", "label": "oceania", "shape": "dot", "title": "{\u0027name\u0027: \u0027Oceania\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "cuba", "label": "cuba", "shape": "dot", "title": "{\u0027name\u0027: \u0027Cuba\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "north_korea", "label": "north_korea", "shape": "dot", "title": "{\u0027name\u0027: \u0027North Korea\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "cameroon", "label": "cameroon", "shape": "dot", "title": "{\u0027name\u0027: \u0027Cameroon\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "south_korea", "label": "south_korea", "shape": "dot", "title": "{\u0027name\u0027: \u0027South Korea\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "senegal", "label": "senegal", "shape": "dot", "title": "{\u0027name\u0027: \u0027Senegal\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "ghana", "label": "ghana", "shape": "dot", "title": "{\u0027name\u0027: \u0027Ghana\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "costa_rica", "label": "costa_rica", "shape": "dot", "title": "{\u0027name\u0027: \u0027Costa Rica\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "morocco", "label": "morocco", "shape": "dot", "title": "{\u0027name\u0027: \u0027Morocco\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "sepp_blatter", "label": "sepp_blatter", "shape": "dot", "title": "{\u0027name\u0027: \u0027Sepp Blatter\u0027, \u0027role\u0027: \u0027FIFA President\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "michel_platini", "label": "michel_platini", "shape": "dot", "title": "{\u0027name\u0027: \u0027Michel Platini\u0027, \u0027role\u0027: \u0027UEFA President\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "gianni_infantino", "label": "gianni_infantino", "shape": "dot", "title": "{\u0027name\u0027: \u0027Gianni Infantino\u0027, \u0027role\u0027: \u0027FIFA President\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "chuck_blazer", "label": "chuck_blazer", "shape": "dot", "title": "{\u0027name\u0027: \u0027Chuck Blazer\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "jerome_valcke", "label": "jerome_valcke", "shape": "dot", "title": "{\u0027name\u0027: \u0027J\u00e9r\u00f4me Valcke\u0027, \u0027role\u0027: \u0027FIFA Secretary General\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "blatter", "label": "blatter", "shape": "dot", "title": "{\u0027name\u0027: \u0027Blatter\u0027, \u0027role\u0027: \u0027FIFA President\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "platini", "label": "platini", "shape": "dot", "title": "{\u0027name\u0027: \u0027Michel Platini\u0027, \u0027role\u0027: \u0027FIFA VP\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "womens_world_cup", "label": "womens_world_cup", "shape": "dot", "title": "{\u0027name\u0027: \"FIFA Women\u0027s World Cup\"}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "olympics", "label": "olympics", "shape": "dot", "title": "{\u0027name\u0027: \u0027Summer Olympic Games\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "confederations_cup", "label": "confederations_cup", "shape": "dot", "title": "{\u0027name\u0027: \u0027FIFA Confederations Cup\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "jules_rimet_trophy", "label": "jules_rimet_trophy", "shape": "dot", "title": "{\u0027name\u0027: \u0027Jules Rimet Trophy\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "fifa_world_cup_trophy", "label": "fifa_world_cup_trophy", "shape": "dot", "title": "{\u0027name\u0027: \u0027FIFA World Cup Trophy\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "gazzaniga", "label": "gazzaniga", "shape": "dot", "title": "{\u0027name\u0027: \u0027Silvio Gazzaniga\u0027, \u0027occupation\u0027: \u0027Designer\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "gold_medal", "label": "gold_medal", "shape": "dot", "title": "{\u0027type\u0027: \u0027gold\u0027, \u0027position\u0027: \u0027first place\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "silver_medal", "label": "silver_medal", "shape": "dot", "title": "{\u0027type\u0027: \u0027silver\u0027, \u0027position\u0027: \u0027second place\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "bronze_medal", "label": "bronze_medal", "shape": "dot", "title": "{\u0027type\u0027: \u0027bronze\u0027, \u0027position\u0027: \u0027third place\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "fifa_champions_badge", "label": "fifa_champions_badge", "shape": "dot", "title": "{\u0027name\u0027: \u0027FIFA Champions Badge\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "qualification_tournament", "label": "qualification_tournament", "shape": "dot", "title": "{\u0027purpose\u0027: \u0027thin the field for final tournament\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "final_tournament", "label": "final_tournament", "shape": "dot", "title": "{\u0027format\u0027: \u002732 teams\u0027, \u0027duration\u0027: \u0027one month\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "group_stage", "label": "group_stage", "shape": "dot", "title": "{}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "knockout_stage", "label": "knockout_stage", "shape": "dot", "title": "{}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "points_system", "label": "points_system", "shape": "dot", "title": "{\u0027win\u0027: 3, \u0027draw\u0027: 1, \u0027loss\u0027: 0}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "tiebreaker_system", "label": "tiebreaker_system", "shape": "dot", "title": "{\u0027criteria\u0027: [\u0027goal difference\u0027, \u0027goals scored\u0027, \u0027head-to-head\u0027]}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "fair_play_points", "label": "fair_play_points", "shape": "dot", "title": "{\u0027yellow_card\u0027: -1, \u0027indirect_red_card\u0027: -3, \u0027direct_red_card\u0027: -4}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "round_of_16", "label": "round_of_16", "shape": "dot", "title": "{\u0027name\u0027: \u0027Round of 16\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "quarter_finals", "label": "quarter_finals", "shape": "dot", "title": "{\u0027name\u0027: \u0027Quarter-finals\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "semi_finals", "label": "semi_finals", "shape": "dot", "title": "{\u0027name\u0027: \u0027Semi-finals\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "third_place_match", "label": "third_place_match", "shape": "dot", "title": "{\u0027name\u0027: \u0027Third-place match\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "final", "label": "final", "shape": "dot", "title": "{\u0027name\u0027: \u0027Final\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "2026_world_cup", "label": "2026_world_cup", "shape": "dot", "title": "{\u0027name\u0027: \u00272026 FIFA World Cup\u0027, \u0027teams\u0027: 48}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "2030_world_cup", "label": "2030_world_cup", "shape": "dot", "title": "{\u0027name\u0027: \u00272030 FIFA World Cup\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "japan", "label": "japan", "shape": "dot", "title": "{\u0027name\u0027: \u0027Japan\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "south_africa", "label": "south_africa", "shape": "dot", "title": "{\u0027name\u0027: \u0027South Africa\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "russia", "label": "russia", "shape": "dot", "title": "{\u0027name\u0027: \u0027Russia\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "uefa", "label": "uefa", "shape": "dot", "title": "{\u0027name\u0027: \u0027UEFA\u0027, \u0027full_name\u0027: \u0027Union of European Football Associations\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "conmebol", "label": "conmebol", "shape": "dot", "title": "{\u0027name\u0027: \u0027CONMEBOL\u0027, \u0027full_name\u0027: \u0027South American Football Confederation\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "concacaf", "label": "concacaf", "shape": "dot", "title": "{\u0027name\u0027: \u0027CONCACAF\u0027, \u0027full_name\u0027: \u0027Confederation of North, Central America and Caribbean Association Football\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "afc", "label": "afc", "shape": "dot", "title": "{\u0027name\u0027: \u0027AFC\u0027, \u0027full_name\u0027: \u0027Asian Football Confederation\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "caf", "label": "caf", "shape": "dot", "title": "{\u0027name\u0027: \u0027CAF\u0027, \u0027full_name\u0027: \u0027Confederation of African Football\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "ofc", "label": "ofc", "shape": "dot", "title": "{\u0027name\u0027: \u0027OFC\u0027, \u0027full_name\u0027: \u0027Oceania Football Confederation\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "adidas", "label": "adidas", "shape": "dot", "title": "{\u0027name\u0027: \u0027Adidas\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "panini", "label": "panini", "shape": "dot", "title": "{\u0027name\u0027: \u0027Panini\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "electronic_arts", "label": "electronic_arts", "shape": "dot", "title": "{\u0027name\u0027: \u0027Electronic Arts\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "uruguay_1930", "label": "uruguay_1930", "shape": "dot", "title": "{\u0027year\u0027: 1930, \u0027host\u0027: \u0027Uruguay\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "italy_1934", "label": "italy_1934", "shape": "dot", "title": "{\u0027year\u0027: 1934, \u0027host\u0027: \u0027Italy\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "france_1938", "label": "france_1938", "shape": "dot", "title": "{\u0027year\u0027: 1938, \u0027host\u0027: \u0027France\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "brazil_1950", "label": "brazil_1950", "shape": "dot", "title": "{\u0027year\u0027: 1950, \u0027host\u0027: \u0027Brazil\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "switzerland_1954", "label": "switzerland_1954", "shape": "dot", "title": "{\u0027year\u0027: 1954, \u0027host\u0027: \u0027Switzerland\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "sweden_1958", "label": "sweden_1958", "shape": "dot", "title": "{\u0027year\u0027: 1958, \u0027host\u0027: \u0027Sweden\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "chile_1962", "label": "chile_1962", "shape": "dot", "title": "{\u0027year\u0027: 1962, \u0027host\u0027: \u0027Chile\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "england_1966", "label": "england_1966", "shape": "dot", "title": "{\u0027year\u0027: 1966, \u0027host\u0027: \u0027England\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "mexico_1970", "label": "mexico_1970", "shape": "dot", "title": "{\u0027year\u0027: 1970, \u0027host\u0027: \u0027Mexico\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "west_germany_1974", "label": "west_germany_1974", "shape": "dot", "title": "{\u0027year\u0027: 1974, \u0027host\u0027: \u0027West Germany\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "netherlands", "label": "netherlands", "shape": "dot", "title": "{\u0027name\u0027: \u0027Netherlands\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "croatia", "label": "croatia", "shape": "dot", "title": "{\u0027name\u0027: \u0027Croatia\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "portugal", "label": "portugal", "shape": "dot", "title": "{\u0027name\u0027: \u0027Portugal\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "antonio_carbajal", "label": "antonio_carbajal", "shape": "dot", "title": "{\u0027name\u0027: \u0027Antonio Carbajal\u0027, \u0027country\u0027: \u0027Mexico\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "rafael_marquez", "label": "rafael_marquez", "shape": "dot", "title": "{\u0027name\u0027: \u0027Rafael M\u00e1rquez\u0027, \u0027country\u0027: \u0027Mexico\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "andres_guardado", "label": "andres_guardado", "shape": "dot", "title": "{\u0027name\u0027: \u0027Andr\u00e9s Guardado\u0027, \u0027country\u0027: \u0027Mexico\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "lothar_matthaus", "label": "lothar_matthaus", "shape": "dot", "title": "{\u0027name\u0027: \u0027Lothar Matth\u00e4us\u0027, \u0027country\u0027: \u0027Germany\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "lionel_messi", "label": "lionel_messi", "shape": "dot", "title": "{\u0027name\u0027: \u0027Lionel Messi\u0027, \u0027country\u0027: \u0027Argentina\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "cristiano_ronaldo", "label": "cristiano_ronaldo", "shape": "dot", "title": "{\u0027name\u0027: \u0027Cristiano Ronaldo\u0027, \u0027country\u0027: \u0027Portugal\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "miroslav_klose", "label": "miroslav_klose", "shape": "dot", "title": "{\u0027name\u0027: \u0027Miroslav Klose\u0027, \u0027country\u0027: \u0027Germany\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "pele", "label": "pele", "shape": "dot", "title": "{\u0027name\u0027: \u0027Pel\u00e9\u0027, \u0027country\u0027: \u0027Brazil\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "mario_zagallo", "label": "mario_zagallo", "shape": "dot", "title": "{\u0027name\u0027: \u0027M\u00e1rio Zagallo\u0027, \u0027country\u0027: \u0027Brazil\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "franz_beckenbauer", "label": "franz_beckenbauer", "shape": "dot", "title": "{\u0027name\u0027: \u0027Franz Beckenbauer\u0027, \u0027country\u0027: \u0027Germany\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "didier_deschamps", "label": "didier_deschamps", "shape": "dot", "title": "{\u0027name\u0027: \u0027Didier Deschamps\u0027, \u0027country\u0027: \u0027France\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "vittorio_pozzo", "label": "vittorio_pozzo", "shape": "dot", "title": "{\u0027name\u0027: \u0027Vittorio Pozzo\u0027, \u0027country\u0027: \u0027Italy\u0027}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "just_fontaine", "label": "just_fontaine", "shape": "dot", "title": "{\u0027name\u0027: \u0027Just Fontaine\u0027, \u0027goals\u0027: 13, \u0027matches\u0027: 6, \u0027goals_per_match\u0027: 2.17}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "kylian_mbappe", "label": "kylian_mbappe", "shape": "dot", "title": "{\u0027name\u0027: \u0027Kylian Mbapp\u00e9\u0027, \u0027goals\u0027: 12, \u0027matches\u0027: 14, \u0027goals_per_match\u0027: 0.86}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "sandor_kocsis", "label": "sandor_kocsis", "shape": "dot", "title": "{\u0027name\u0027: \u0027S\u00e1ndor Kocsis\u0027, \u0027goals\u0027: 11, \u0027matches\u0027: 5, \u0027goals_per_match\u0027: 2.2}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "jurgen_klinsmann", "label": "jurgen_klinsmann", "shape": "dot", "title": "{\u0027name\u0027: \u0027J\u00fcrgen Klinsmann\u0027, \u0027goals\u0027: 11, \u0027matches\u0027: 17, \u0027goals_per_match\u0027: 0.65}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "golden_ball", "label": "golden_ball", "shape": "dot", "title": "{\u0027name\u0027: \u0027Golden Ball\u0027, \u0027first_awarded\u0027: 1982}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "golden_boot", "label": "golden_boot", "shape": "dot", "title": "{\u0027name\u0027: \u0027Golden Boot\u0027, \u0027first_awarded\u0027: 1982}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "golden_glove", "label": "golden_glove", "shape": "dot", "title": "{\u0027name\u0027: \u0027Golden Glove\u0027, \u0027first_awarded\u0027: 1994}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "young_player_award", "label": "young_player_award", "shape": "dot", "title": "{\u0027name\u0027: \u0027FIFA Young Player Award\u0027, \u0027first_awarded\u0027: 2006}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "fair_play_trophy", "label": "fair_play_trophy", "shape": "dot", "title": "{\u0027name\u0027: \u0027FIFA Fair Play Trophy\u0027, \u0027first_awarded\u0027: 1970}"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "west germany", "label": "west germany", "shape": "dot", "title": "west germany"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "emiliano_martinez", "label": "emiliano_martinez", "shape": "dot", "title": "emiliano_martinez"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "enzo_fernandez", "label": "enzo_fernandez", "shape": "dot", "title": "enzo_fernandez"}]);
+                  edges = new vis.DataSet([{"from": "fifa", "title": "organizes", "to": "fifa_world_cup"}, {"from": "argentina", "title": "won", "to": "fifa_world_cup"}, {"from": "brazil", "title": "most_successful", "to": "fifa_world_cup"}, {"from": "qatar", "title": "hosted", "to": "fifa_world_cup"}, {"from": "canada", "title": "will_host", "to": "fifa_world_cup"}, {"from": "mexico", "title": "will_host", "to": "fifa_world_cup"}, {"from": "united_states", "title": "will_host", "to": "fifa_world_cup"}, {"from": "jules_rimet", "title": "promoted", "to": "fifa_world_cup"}, {"from": "estadio_centenario", "title": "hosted", "to": "fifa_world_cup"}, {"from": "fa_england", "title": "refused", "to": "lipton_competition"}, {"from": "west_auckland", "title": "represented", "to": "england"}, {"from": "west_auckland", "title": "won", "to": "lipton_competition"}, {"from": "fifa", "title": "recognized", "to": "olympic_tournament"}, {"from": "uruguay", "title": "won", "to": "olympic_tournament"}, {"from": "jules_rimet", "title": "initiated", "to": "world_cup"}, {"from": "fifa", "title": "named", "to": "uruguay"}, {"from": "france", "title": "defeated", "to": "mexico"}, {"from": "united_states", "title": "defeated", "to": "belgium"}, {"from": "lucien_laurent", "title": "scored", "to": "world_cup"}, {"from": "uruguay", "title": "defeated", "to": "argentina"}, {"from": "cuba", "title": "reached", "to": "fifa_world_cup"}, {"from": "north_korea", "title": "reached", "to": "fifa_world_cup"}, {"from": "cameroon", "title": "reached", "to": "fifa_world_cup"}, {"from": "south_korea", "title": "reached", "to": "fifa_world_cup"}, {"from": "senegal", "title": "reached", "to": "fifa_world_cup"}, {"from": "ghana", "title": "reached", "to": "fifa_world_cup"}, {"from": "costa_rica", "title": "reached", "to": "fifa_world_cup"}, {"from": "morocco", "title": "reached", "to": "fifa_world_cup"}, {"from": "sepp_blatter", "title": "proposed", "to": "fifa_world_cup"}, {"from": "michel_platini", "title": "proposed", "to": "fifa_world_cup"}, {"from": "gianni_infantino", "title": "supported", "to": "fifa_world_cup"}, {"from": "chuck_blazer", "title": "admitted_bribery", "to": "fifa_world_cup"}, {"from": "jerome_valcke", "title": "postponed", "to": "fifa_world_cup"}, {"from": "blatter", "title": "suspended_from", "to": "fifa"}, {"from": "platini", "title": "suspended_from", "to": "fifa"}, {"from": "fifa", "title": "organizes", "to": "world_cup"}, {"from": "fifa", "title": "organizes", "to": "womens_world_cup"}, {"from": "fifa", "title": "organizes", "to": "confederations_cup"}, {"from": "world_cup", "title": "awarded", "to": "jules_rimet_trophy"}, {"from": "world_cup", "title": "awarded", "to": "fifa_world_cup_trophy"}, {"from": "gazzaniga", "title": "designed", "to": "fifa_world_cup_trophy"}, {"from": "fifa_world_cup", "title": "awards", "to": "gold_medal"}, {"from": "fifa_world_cup", "title": "awards", "to": "silver_medal"}, {"from": "fifa_world_cup", "title": "awards", "to": "bronze_medal"}, {"from": "fifa_world_cup", "title": "awards", "to": "fifa_champions_badge"}, {"from": "fifa_world_cup", "title": "has_phase", "to": "qualification_tournament"}, {"from": "fifa_world_cup", "title": "has_phase", "to": "final_tournament"}, {"from": "final_tournament", "title": "consists_of", "to": "group_stage"}, {"from": "final_tournament", "title": "consists_of", "to": "knockout_stage"}, {"from": "group_stage", "title": "uses", "to": "points_system"}, {"from": "group_stage", "title": "uses", "to": "tiebreaker_system"}, {"from": "tiebreaker_system", "title": "includes", "to": "fair_play_points"}, {"from": "fifa_world_cup", "title": "has_stage", "to": "round_of_16"}, {"from": "fifa_world_cup", "title": "has_stage", "to": "quarter_finals"}, {"from": "fifa_world_cup", "title": "has_stage", "to": "semi_finals"}, {"from": "fifa_world_cup", "title": "has_stage", "to": "third_place_match"}, {"from": "fifa_world_cup", "title": "has_stage", "to": "final"}, {"from": "fifa", "title": "approved", "to": "2026_world_cup"}, {"from": "uruguay", "title": "hosted", "to": "fifa_world_cup"}, {"from": "france", "title": "hosted", "to": "fifa_world_cup"}, {"from": "japan", "title": "co_hosted", "to": "fifa_world_cup"}, {"from": "south_africa", "title": "hosted", "to": "fifa_world_cup"}, {"from": "russia", "title": "hosted", "to": "fifa_world_cup"}, {"from": "united_states", "title": "will_host", "to": "2026_world_cup"}, {"from": "canada", "title": "will_host", "to": "2026_world_cup"}, {"from": "mexico", "title": "will_host", "to": "2026_world_cup"}, {"from": "uefa", "title": "hosted", "to": "fifa_world_cup"}, {"from": "conmebol", "title": "hosted", "to": "fifa_world_cup"}, {"from": "concacaf", "title": "hosted", "to": "fifa_world_cup"}, {"from": "afc", "title": "hosted", "to": "fifa_world_cup"}, {"from": "caf", "title": "hosted", "to": "fifa_world_cup"}, {"from": "ofc", "title": "hosted", "to": "fifa_world_cup"}, {"from": "adidas", "title": "supplies", "to": "fifa_world_cup"}, {"from": "panini", "title": "publishes", "to": "fifa_world_cup"}, {"from": "electronic_arts", "title": "licenses", "to": "fifa_world_cup"}, {"from": "uruguay_1930", "title": "winner", "to": "uruguay"}, {"from": "italy_1934", "title": "winner", "to": "italy"}, {"from": "france_1938", "title": "winner", "to": "italy"}, {"from": "brazil_1950", "title": "winner", "to": "uruguay"}, {"from": "switzerland_1954", "title": "winner", "to": "west germany"}, {"from": "sweden_1958", "title": "winner", "to": "brazil"}, {"from": "chile_1962", "title": "winner", "to": "brazil"}, {"from": "england_1966", "title": "winner", "to": "england"}, {"from": "mexico_1970", "title": "winner", "to": "brazil"}, {"from": "west_germany_1974", "title": "winner", "to": "west germany"}, {"from": "germany", "title": "won", "to": "fifa_world_cup"}, {"from": "italy", "title": "won", "to": "fifa_world_cup"}, {"from": "england", "title": "won", "to": "fifa_world_cup"}, {"from": "spain", "title": "won", "to": "fifa_world_cup"}, {"from": "netherlands", "title": "runner_up", "to": "fifa_world_cup"}, {"from": "croatia", "title": "runner_up", "to": "fifa_world_cup"}, {"from": "brazil", "title": "won", "to": "world_cup"}, {"from": "argentina", "title": "won", "to": "world_cup"}, {"from": "germany", "title": "won", "to": "world_cup"}, {"from": "spain", "title": "won", "to": "world_cup"}, {"from": "italy", "title": "won", "to": "world_cup"}, {"from": "france", "title": "won", "to": "world_cup"}, {"from": "antonio_carbajal", "title": "played_in", "to": "world_cup"}, {"from": "rafael_marquez", "title": "played_in", "to": "world_cup"}, {"from": "andres_guardado", "title": "played_in", "to": "world_cup"}, {"from": "lothar_matthaus", "title": "played_in", "to": "world_cup"}, {"from": "lionel_messi", "title": "played_in", "to": "world_cup"}, {"from": "cristiano_ronaldo", "title": "played_in", "to": "world_cup"}, {"from": "miroslav_klose", "title": "top_scorer", "to": "world_cup"}, {"from": "pele", "title": "won", "to": "world_cup"}, {"from": "mario_zagallo", "title": "won_as_player_and_coach", "to": "world_cup"}, {"from": "franz_beckenbauer", "title": "won_as_player_and_coach", "to": "world_cup"}, {"from": "didier_deschamps", "title": "won_as_player_and_coach", "to": "world_cup"}, {"from": "vittorio_pozzo", "title": "coached", "to": "world_cup"}, {"from": "golden_ball", "title": "awarded_to", "to": "lionel_messi"}, {"from": "golden_boot", "title": "awarded_to", "to": "kylian_mbappe"}, {"from": "golden_glove", "title": "awarded_to", "to": "emiliano_martinez"}, {"from": "young_player_award", "title": "awarded_to", "to": "enzo_fernandez"}, {"from": "fair_play_trophy", "title": "awarded_to", "to": "england"}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });
@@ -571,6 +853,23 @@ function highlightFilter(filter) {
                   
 
 
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
                   
 
                   return network;
